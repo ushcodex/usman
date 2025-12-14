@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Usman Shehu Ahmad | Process-Driven Systems Engineer</title>
+    <meta name="title" content="Usman Shehu Ahmad | Process-Driven Systems Engineer">
+    <meta name="description" content="Portfolio of Usman Shehu Ahmad. President SPE ABU Zaria '26. Founder of Ushcodex. Merging Chemical Engineering process logic with scalable software architecture.">
+    <meta name="keywords" content="Usman Shehu Ahmad, Systems Engineer, Chemical Engineering, SPE ABU Zaria, Ushcodex, Next.js, Process Engineering, Zaria, Nigeria, Frontend Developer, Enactus">
+    <meta name="author" content="Usman Shehu Ahmad">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta property="og:image" content="https://og-image.vercel.app/**USMAN%20SHEHU%20AHMAD**%0A%20PROCESS-DRIVEN%20SYSTEMS%20ENGINEER.png?theme=dark&md=1&fontSize=100px">
+    <meta property="twitter:image" content="https://og-image.vercel.app/**USMAN%20SHEHU%20AHMAD**%0A%20PROCESS-DRIVEN%20SYSTEMS%20ENGINEER.png?theme=dark&md=1&fontSize=100px">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://usman.engineer/">
+    <meta property="og:title" content="Usman Shehu Ahmad | Process-Driven Systems Engineer">
+    <meta property="og:description" content="President SPE ABU Zaria '26. Founder of Ushcodex. I build systems for the physical and digital world.">
+    <meta property="og:image" content="https://ushcodex.tech/og-image.jpg"> <meta property="og:image:alt" content="Usman Shehu Ahmad - Systems Engineer">
+    <meta property="og:locale" content="en_US">
+    <meta property="profile:first_name" content="Usman">
+    <meta property="profile:last_name" content="Ahmad">
+    <meta property="profile:username" content="ushcodex">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://usman.engineer/">
+    <meta property="twitter:title" content="Usman Shehu Ahmad | Systems Engineer">
+    <meta property="twitter:description" content="President SPE ABU Zaria '26. Founder Ushcodex. Merging Atoms and Bits.">
+    <meta property="twitter:image" content="https://ushcodex.tech/og-image.jpg">
+
+    <link rel="canonical" href="https://usman.engineer/">
+    <meta name="theme-color" content="#050505">
+    <link rel="icon" type="image/png" href="/favicon.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Usman Shehu Ahmad",
+      "jobTitle": "Systems Engineer",
+      "url": "https://usman.engineer",
+      "sameAs": [
+        "https://www.linkedin.com/in/ushcodex",
+        "https://github.com/ushcodex",
+        "https://ushcodex.tech"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Ahmadu Bello University",
+        "location": "Zaria, Nigeria"
+      },
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Society of Petroleum Engineers (SPE)",
+          "roleName": "President, ABU Zaria Student Chapter (2026)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Enactus",
+          "roleName": "R&D Engineer"
+        }
+      ],
+      "founder": {
+        "@type": "Organization",
+        "name": "Ushcodex",
+        "url": "https://ushcodex.tech"
+      },
+      "knowsAbout": ["Chemical Engineering", "Process Simulation", "Next.js", "System Architecture", "Python"]
+    }
+    </script>
+
+    <style>
+        /* --- 01. SYSTEM VARIABLES --- */
+        :root {
+            /* Backgrounds */
+            --bg-void: #050505;
+            --bg-card: #0a0a0a;
+            --bg-hover: rgba(255, 255, 255, 0.03);
+            
+            /* Text - WCAG Optimized */
+            --text-main: #f1f5f9;      /* Slate 100 */
+            --text-muted: #cbd5e1;     /* Slate 300 */
+            --text-dim: #94a3b8;       /* Slate 400 */
+            
+            /* Accents */
+            --accent-cyan: #06b6d4;    /* Primary Process Color */
+            --accent-flow: #334155;    /* The "Pipe" Color */
+            
+            /* Fonts */
+            --font-head: 'Rajdhani', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Animation */
+            --trans-fast: 0.2s ease;
+        }
+
+        /* --- 02. RESET & CORE --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-void);
+            color: var(--text-muted);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* The System Monitor (Spotlight) */
+        .system-monitor {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(600px at var(--x, 50%) var(--y, 50%), rgba(6, 182, 212, 0.08), transparent 80%);
+            pointer-events: none; z-index: 9999;
+        }
+
+        h1, h2, h3, h4 { color: var(--text-main); font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        h1 { font-size: 3.5rem; line-height: 0.95; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.1rem; font-weight: 500; color: var(--accent-cyan); margin-bottom: 1.5rem; letter-spacing: 0.1em; font-family: var(--font-mono); }
+        
+        /* Section Headers (The Process Nodes) */
+        .section-node {
+            display: flex; align-items: center; gap: 1rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-node::before {
+            content: ''; width: 12px; height: 12px;
+            background: var(--bg-void); border: 2px solid var(--accent-cyan);
+            border-radius: 50%; z-index: 2;
+        }
+        .section-node h3 { font-size: 1.5rem; color: var(--text-main); }
+        
+        /* Links */
+        a { text-decoration: none; color: inherit; transition: var(--trans-fast); }
+        
+        .external-link {
+            color: var(--text-main);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.4);
+            padding-bottom: 1px;
+        }
+        .external-link:hover {
+            color: var(--accent-cyan);
+            border-bottom-color: var(--accent-cyan);
+        }
+
+        /* --- 03. LAYOUT GRID --- */
+        .layout-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 5rem;
+        }
+
+        /* --- 04. SIDEBAR (The Control Panel) --- */
+        .sidebar {
+            width: 40%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            padding: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .id-badge { 
+            font-family: var(--font-mono); 
+            font-size: 0.75rem; 
+            color: var(--text-dim); 
+            border: 1px solid var(--accent-flow);
+            padding: 0.2rem 0.6rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .bio-text { max-width: 340px; font-size: 1rem; color: var(--text-muted); margin-top: 2rem; }
+
+        /* Desktop Nav */
+        .nav-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 4rem; width: max-content; }
+        .nav-link { 
+            font-family: var(--font-mono); font-size: 0.75rem; 
+            color: var(--text-dim); display: flex; align-items: center; gap: 1rem; 
+            transition: 0.2s; letter-spacing: 0.1em; cursor: pointer;
+        }
+        .nav-dash { width: 30px; height: 1px; background: var(--text-dim); transition: 0.2s; }
+        
+        .nav-link:hover .nav-dash, .nav-link.active .nav-dash { width: 60px; background: var(--accent-cyan); }
+        .nav-link:hover, .nav-link.active { color: var(--text-main); }
+
+        /* Socials */
+        .socials { display: flex; gap: 1.5rem; }
+        .social-icon { color: var(--text-dim); transition: 0.2s; }
+        .social-icon:hover { color: var(--accent-cyan); }
+
+        /* --- 05. CONTENT STREAM (The Process Flow) --- */
+        .content { 
+            width: 60%; 
+            padding: 5rem 0; 
+            position: relative; 
+            border-left: 1px solid var(--accent-flow); /* The Pipe Line */
+        }
+        
+        section { 
+            margin-bottom: 8rem; 
+            padding-left: 2rem; /* Offset for the pipe line */
+            scroll-margin-top: 100px;
+        }
+
+        /* --- 06. CARDS (Modules) --- */
+        .card {
+            background: transparent;
+            padding: 2rem;
+            border-radius: 6px;
+            transition: var(--trans-fast);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-dim, transparent);
+            position: relative;
+        }
+        
+        .card:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent-flow);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        /* Scope Badge (The Magnitude) */
+        .scope-badge {
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            letter-spacing: 0.05em;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .meta-date {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .role-header h4 { font-size: 1.15rem; margin-bottom: 0.2rem; color: var(--text-main); }
+        .org-name { color: var(--text-muted); font-weight: 400; font-family: var(--font-body); font-size: 0.95rem; }
+        
+        /* Achievements List */
+        .achievements-list { margin-top: 1rem; padding-left: 1rem; }
+        .achievements-list li {
+            list-style: none;
+            position: relative;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .achievements-list li::before {
+            content: '▹'; position: absolute; left: -1.2rem; color: var(--accent-cyan);
+        }
+
+        /* Sub-grids (Enactus/Research) */
+        .sub-grid {
+            display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+            margin-top: 1.5rem; padding-top: 1.5rem;
+            border-top: 1px solid var(--accent-flow);
+        }
+        .sub-item { margin-bottom: 1rem; }
+        .sub-item h5 { font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.3rem; font-family: var(--font-mono); font-weight: 700; }
+        .sub-item p { font-size: 0.8rem; line-height: 1.5; color: var(--text-dim); }
+        
+        /* Research Special Grid */
+        .problem-solution { display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.8rem; }
+        .ps-tag { color: var(--accent-cyan); font-weight: 600; font-family: var(--font-mono); min-width: 70px; }
+
+        /* Tags */
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
+        .tag {
+            font-family: var(--font-mono); font-size: 0.7rem;
+            color: var(--accent-cyan); background: rgba(6, 182, 212, 0.05);
+            padding: 0.3rem 0.8rem; border-radius: 100px; border: 1px solid rgba(6, 182, 212, 0.1);
+        }
+
+        /* --- 07. PROJECT CARDS (Non-Clickable Container) --- */
+        .proj-card {
+            display: flex; gap: 1.5rem; padding: 2rem;
+            border-radius: 6px; margin-bottom: 1.5rem;
+            border: 1px solid transparent; 
+            position: relative;
+        }
+        .proj-card:hover { background: var(--bg-hover); border-color: var(--accent-flow); }
+        .proj-card:hover h4 { color: var(--accent-cyan); }
+
+        .proj-thumb {
+            min-width: 100px; height: 60px;
+            background: var(--bg-card); border: 1px solid var(--accent-flow);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim);
+        }
+
+        /* Project Link Button */
+        .proj-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        .proj-link:hover { color: var(--accent-cyan); }
+        .proj-link::after { content: ' ->'; }
+
+        /* --- 08. MOBILE NAV (Bottom Sticky) --- */
+        .mobile-nav {
+            display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+            background: rgba(5,5,5,0.95); backdrop-filter: blur(10px);
+            border-top: 1px solid var(--accent-flow); z-index: 100;
+            padding: 1rem 0; justify-content: space-around;
+        }
+        .mob-link { font-family: var(--font-head); font-size: 0.9rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; }
+        .mob-link.active { color: var(--accent-cyan); }
+        
+        /* --- 09. CONNECT CTA (End of content) --- */
+        .connect-box {
+            margin-top: 4rem;
+            padding: 2rem;
+            border: 1px dashed var(--accent-flow);
+            text-align: center;
+        }
+
+        /* --- 10. RESPONSIVE --- */
+        @media (max-width: 1000px) {
+            .layout-grid { flex-direction: column; gap: 0; }
+            .sidebar { width: 100%; height: auto; position: relative; padding: 4rem 0 2rem 0; }
+            .content { width: 100%; padding: 2rem 0 6rem 0; border-left: none; } /* Remove pipe on mobile */
+            .section-node::before { display: none; } /* Remove node on mobile */
+            section { padding-left: 0; }
+            .nav-list { display: none; }
+            .mobile-nav { display: flex; }
+            .card, .proj-card { padding: 1.5rem 0; border: none; }
+            .sub-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="system-monitor" id="monitor"></div>
+
+    <div class="layout-grid">
+        
+        <aside class="sidebar">
+            <div>
+                <span class="id-badge">ID: 200389 // USMAN S. AHMAD</span>
+                <h1>USMAN SHEHU<br>AHMAD</h1>
+                <h2>PROCESS-DRIVEN SYSTEMS ENGINEER</h2>
+                
+                <h3 style="font-size: 0.9rem; font-family: var(--font-body); font-weight: 500; text-transform: none; color: var(--text-muted); margin-top: 1rem;">
+                    President SPE ABU Zaria '26 & Founder Ushcodex
+                </h3>
+                <p class="bio-text">
+                    Merging chemical process logic with scalable software architecture. I build systems for the physical and digital world.
+                    <br /><br />
+                </p>
+
+                <nav class="nav-list">
+                    <a href="#about" class="nav-link active"><span class="nav-dash"></span>ABOUT</a>
+                    <a href="#experience" class="nav-link"><span class="nav-dash"></span>EXPERIENCE</a>
+                    <a href="#projects" class="nav-link"><span class="nav-dash"></span>PROJECTS</a>
+                </nav>
+            </div>
+
+            <div class="socials">
+                <a href="https://github.com/ushcodex" target="_blank" class="social-icon" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/ushcodex" target="_blank" class="social-icon" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="mailto:ushcodexshehu@gmail.com" class="social-icon" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+            </div>
+        </aside>
+
+        <main class="content">
+
+            <section id="about">
+                <div class="section-node"><h3>01. CORE THESIS</h3></div>
+                <p>
+                    I am an engineer first. My system architecture is governed by the principles of 
+                    <strong style="color: var(--text-main)">mass balance</strong>: 
+                    I ensure optimal conversion efficiency by eliminating wasteful accumulation between Input and Output.
+                    <br /><br />
+                </p>
+                <p>
+                    Whether digitizing a chemical plant's supply chain or leading a student chapter, I focus on the "Flow" of the system. 
+                    <br /><br /> Currently serving as President of <a href="https://speabuzaria.org" target="_blank" class="external-link">SPE ABU Zaria</a> (2026), 
+                    I apply these engineering principles to leadership, creating data-driven frameworks for regional energy innovation.
+                </p>
+            </section>
+
+            <section id="experience">
+                <div class="section-node"><h3>02. OPERATIONAL LOG</h3></div>
+
+                <div class="card">
+                    <span class="scope-badge">AFRICA REGIONAL AWARD · 300% GROWTH</span>
+                    <span class="meta-date">NOV 2023 — PRESENT</span>
+                    
+                    <div class="role-header">
+                        <h4>President (2026 Session)</h4>
+                        <span class="org-name"><a href="https://speabuzaria.org" target="_blank" class="external-link">Society of Petroleum Engineers (ABU Zaria)</a></span>
+                    </div>
+                    
+                    <p class="role-desc" style="margin-top: 1rem;">
+                        Leading the strategic vision for the chapter. Rose from Membership Chair (2024) to VP (2025) to President (2026).
+                    </p>
+                    <ul class="achievements-list">
+                        <li><strong>Zaria Energy Hackathon:</strong> Spearheaded a Data Science hackathon using real-world datasets to solve local energy poverty.</li>
+                        <li><strong>Green Zaria Carbon Audit:</strong> Initiated a data-science driven audit of local carbon sinks to drive sustainability policy.</li>
+                        <li><strong>Membership Chair Wins:</strong> Achieved 300% growth in active membership through targeted recruitment and value-driven programming.</li>
+                        <li><strong>Technical Excellence (VP):</strong> Spearheaded the Innovation & Research Team, leading to <strong>Gold Awards</strong> in the Student Paper Contest and the <strong>Africa Regional Outstanding Chapter Award</strong> for Technical Dissemination.</li>
+                    </ul>
+                    <div class="tag-cloud">
+                        <span class="tag">Strategic Leadership</span>
+                        <span class="tag">Data Science</span>
+                        <span class="tag">Regional Policy</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="scope-badge">IoT & PROCESS CONTROL · WASTE-TO-ENERGY</span>
+                    <span class="meta-date">2019 — 2026</span>
+                    
+                    <div class="role-header">
+                        <h4>B.Eng Chemical Engineering</h4>
+                        <span class="org-name"><a href="https://abu.edu.ng" target="_blank" class="external-link">Ahmadu Bello University, Zaria</a></span>
+                    </div>
+
+                    <div style="margin-top: 1rem; border-left: 2px solid var(--accent-flow); padding-left: 1rem;">
+                        <span style="font-size: 0.8rem; color: var(--accent-cyan); font-family: var(--font-mono); display: block; margin-bottom: 0.3rem;">LEADERSHIP: CLASS REPRESENTATIVE (2020 - 2023)</span>
+                        <p class="role-desc">
+                            Engineered a systematic information distribution channel, separating "Official Announcements" from "General Conversation." 
+                            This structural change ensured 95% information retention and consistent communication for the entire cohort.
+                        </p>
+                    </div>
+
+                    <div class="sub-grid">
+                        <div class="sub-item">
+                            <h5>Capstone 1: Edge-Compute AI Surveillance</h5>
+                            <div class="problem-solution">
+                                <span class="ps-tag">PROBLEM:</span>
+                                <span>High failure rate of Electrical Submersible Pumps (ESPs) in Marginal Fields.</span>
+                            </div>
+                            <div class="problem-solution">
+                                <span class="ps-tag">SOLUTION:</span>
+                                <span>A low-cost predictive maintenance system using Python & IoT to detect anomalies.</span>
+                            </div>
+                        </div>
+
+                        <div class="sub-item">
+                            <h5>Capstone 2: Waste-to-Energy Process</h5>
+                            <div class="problem-solution">
+                                <span class="ps-tag">PROBLEM:</span>
+                                <span>Agricultural accumulation of Potato Peel Waste.</span>
+                            </div>
+                            <div class="problem-solution">
+                                <span class="ps-tag">SOLUTION:</span>
+                                <span>Chemical activation using Phosphoric Acid to convert waste into Activated Carbon.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="scope-badge">6 PRODUCT LINES · WASTE-TO-VALUE</span>
+                    <span class="meta-date">JAN 2024 — MAY 2025</span>
+                    
+                    <div class="role-header">
+                        <h4>R&D Engineer</h4>
+                        <span class="org-name"><a href="https://www.enactusabu.org/" target="_blank" class="external-link">Enactus ABU</a></span>
+                    </div>
+                    
+                    <p class="role-desc" style="margin-top: 1rem;">
+                        Conducted economic modeling, feasibility analysis, and prototype testing for sustainable consumer products.
+                    </p>
+                    
+                    <div class="sub-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="sub-item">
+                            <h5>PUP Shoe Polish</h5>
+                            <p>Pyrolysis of plastic waste into hydrophobic polish. <span style="color: var(--accent-cyan)">30% cost reduction vs wax.</span></p>
+                        </div>
+                        <div class="sub-item">
+                            <h5>P2P Paint</h5>
+                            <p>Styrofoam conversion into mosquito-repellent paint.</p>
+                        </div>
+                        <div class="sub-item">
+                            <h5>Tompa</h5>
+                            <p>Powdered tomato concentrate extending shelf-life to 9mo.</p>
+                        </div>
+                        <div class="sub-item">
+                            <h5>GreenFlex</h5>
+                            <p>Recycled plastic molded into durable, high-wear shoe soles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="scope-badge">DIGITAL TRANSFORMATION</span>
+                    <span class="meta-date">2026</span>
+                    
+                    <div class="role-header">
+                        <h4>Tech & Media Volunteer</h4>
+                        <span class="org-name">TEDxSabonGari</span>
+                    </div>
+                    <p class="role-desc" style="margin-top: 1rem;">
+                        Modernized the organization's digital presence. Re-engineered the website using <strong>Next.js and Tailwind CSS</strong> to improve performance and accessibility.
+                    </p>
+                </div>
+
+            </section>
+
+            <section id="projects">
+                <div class="section-node"><h3>03. ARCHITECTURE</h3></div>
+
+                <div class="proj-card">
+                    <div class="proj-thumb">TOOL</div>
+                    <div>
+                        <h4>Under 200KB</h4>
+                        <p class="role-desc">
+                            A browser-based compression engine. Uses client-side bicubic resampling to achieve 99% compression (17MB -> 160KB) without data leaving the device.
+                        </p>
+                        <div class="tag-cloud">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Canvas API</span>
+                            <span class="tag">Constraint Engineering</span>
+                        </div>
+                        <a href="https://under200kb.ushcodex.tech" target="_blank" class="proj-link">Launch Tool</a>
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-thumb">ERP</div>
+                    <div>
+                        <h4>Babanenne Designs System</h4>
+                        <p class="role-desc">
+                            A custom Enterprise Resource Planning (ERP) system for a luxury fashion house.
+                            Centralized inventory, order tracking, and CRM into a unified database, replacing fragmented spreadsheets.
+                        </p>
+                        <div class="tag-cloud">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Inventory Logic</span>
+                        </div>
+                        <a href="https://ushcodex.tech" target="_blank" class="proj-link">View System</a>
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-thumb">AUDIT</div>
+                    <div>
+                        <h4>CureNexus Brand Audit</h4>
+                        <p class="role-desc">
+                            Corrected a critical semantic error in the company's foundation. 
+                            Re-aligned the brand visual system with medical ethical standards to restore practitioner trust.
+                        </p>
+                        <div class="tag-cloud">
+                            <span class="tag">Brand Strategy</span>
+                            <span class="tag">Visual Systems</span>
+                            <span class="tag">Audit</span>
+                        </div>
+                        <a href="https://ushcodex.tech" target="_blank" class="proj-link">View Case Study</a>
+                    </div>
+                </div>
+
+            </section>
+            
+            <div class="connect-box">
+                <p style="margin-bottom: 1rem; color: var(--text-main); font-weight: 500;">
+                    Ready to engineer a solution?
+                </p>
+                <a href="mailto:ushcodexshehu@gmail.com" style="color: var(--accent-cyan); font-family: var(--font-mono); font-size: 0.9rem;">
+                    [ Initialize Contact ]
+                </a>
+                <br/><br/>
+                <a href="https://ushcodex.tech" style="color: var(--accent-cyan); font-family: var(--font-mono); font-size: 0.9rem;">
+                    [ View Agency ]
+                </a>
+            </div>
+
+            <footer style="font-size: 0.8rem; color: #525252; margin-top: 5rem; font-family: var(--font-mono);">
+                <p>
+                    ENGINEERED IN ZARIA, NIGERIA.<br>
+                    BUILT WITH VANILLA HTML/CSS. DEPLOYED ON VERCEL.
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <div class="mobile-nav">
+        <a href="#about" class="mob-link active">About</a>
+        <a href="#experience" class="mob-link">Log</a>
+        <a href="#projects" class="mob-link">Work</a>
+    </div>
+
+    <script>
+        // Optimized Spotlight Effect (requestAnimationFrame)
+        const spotlight = document.getElementById('monitor');
+        let mouseX = 0, mouseY = 0;
+        let isTicking = false;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (!isTicking) {
+                window.requestAnimationFrame(() => {
+                    spotlight.style.setProperty('--x', `${mouseX}px`);
+                    spotlight.style.setProperty('--y', `${mouseY}px`);
+                    isTicking = false;
+                });
+                isTicking = true;
+            }
+        });
+
+        // Scroll Spy (Throttled)
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobLinks = document.querySelectorAll('.mob-link');
+        let scrollTimeout;
+
+        window.addEventListener('scroll', () => {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(() => {
+                    let current = '';
+                    sections.forEach(section => {
+                        const top = section.offsetTop;
+                        if (pageYOffset >= top - 300) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    // Update Desktop Nav
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
+                        }
+                    });
+
+                    // Update Mobile Nav
+                    mobLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                    
+                    scrollTimeout = null;
+                }, 100);
+            }
+        });
+    </script>
+</body>
+  </html>
