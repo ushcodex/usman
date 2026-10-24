@@ -5,10 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Usman Shehu Ahmad | Chemical Engineer, Process Design and Applied AI</title>
 <meta name="description" content="Chemical engineer. Plant design, process simulation, FEED, computational chemistry and applied AI. President SPE ABU Zaria 2025/26. Published SPE-235017-MS.">
+<link rel="canonical" href="https://usman.engineer/">
+
+<!-- PWA & Mobile Capabilities -->
+<meta name="theme-color" content="#B23F16">
+<meta name="color-scheme" content="light">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Usman Ahmad">
+<link rel="manifest" href="/manifest.webmanifest">
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Usman Shehu Ahmad">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="Usman Shehu Ahmad | Chemical Engineer">
 <meta property="og:description" content="Plant design, process simulation, FEED, computational chemistry and applied AI for energy and agro-processing.">
 <meta property="og:image" content="https://usman.engineer/og-image.png">
-<meta property="og:url" content="https://usman.engineer">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Usman Shehu Ahmad - Chemical Engineer and Applied AI Portfolio">
+<meta property="og:url" content="https://usman.engineer/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Usman Shehu Ahmad | Chemical Engineer, Process Design and Applied AI">
+<meta name="twitter:description" content="Plant design, process simulation, FEED, computational chemistry and applied AI. President SPE ABU Zaria 2025/26.">
+<meta name="twitter:image" content="https://usman.engineer/og-image.png">
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -132,7 +164,7 @@ footer h2{margin-bottom:.8rem}
   <h3 class="sub">Final-year work</h3>
   <div class="grid">
     <article class="card">
-      <div class="visual">Placeholder: 3D layout screenshot or recording</div>
+      <div class="visual"><img src="thumb-plant-layout.png" alt="3D Lithium Carbonate Plant Interactive Layout in Three.js" loading="lazy"></div>
       <div class="body">
         <span class="tag">Design project</span>
         <h3>10,000 TPA Battery-Grade Lithium Carbonate Plant</h3>
@@ -143,7 +175,7 @@ footer h2{margin-bottom:.8rem}
       </div>
     </article>
     <article class="card">
-      <div class="visual">Placeholder: simulation screenshot or recording</div>
+      <div class="visual"><img src="thumb-esp.png" alt="ESP Edge AI Surveillance Simulation Dashboard" loading="lazy"></div>
       <div class="body">
         <span class="tag">Published research · Applied AI</span>
         <h3>Edge-Compute AI Surveillance for ESP Fault Detection</h3>
@@ -154,7 +186,7 @@ footer h2{margin-bottom:.8rem}
       </div>
     </article>
     <article class="card">
-      <div class="visual">Placeholder: figure from the DFT study</div>
+      <div class="visual"><img src="dft-zeolite.jpg" alt="DFT Cluster Model of Faujasite Zeolite Y Structure from IZA Database" loading="lazy"></div>
       <div class="body">
         <span class="tag">Research thesis · DFT</span>
         <h3>DFT Investigation into Vanadium Poisoning of Zeolite Y in FCC/RFCC</h3>
@@ -346,5 +378,12 @@ footer h2{margin-bottom:.8rem}
   <p><a href="mailto:ushcodexshehu@gmail.com" data-track="Contact: Email">ushcodexshehu@gmail.com</a> · <a href="https://linkedin.com/in/ushcodex" target="_blank" rel="noopener" data-track="Contact: LinkedIn">LinkedIn</a> · <a href="https://github.com/ushcodex" target="_blank" rel="noopener" data-track="Contact: GitHub">GitHub</a></p>
 </div></footer>
 <script defer src="/track.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
 </body>
 </html>

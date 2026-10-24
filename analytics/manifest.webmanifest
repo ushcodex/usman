@@ -1,0 +1,31 @@
+{
+  "name": "Usman Analytics | Private Telemetry",
+  "short_name": "Analytics",
+  "description": "Private ultra-light real-time visitor analytics and telemetry dashboard.",
+  "start_url": "/analytics/",
+  "scope": "/analytics/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FBF5EA",
+  "theme_color": "#1F1A15",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/analytics/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/analytics/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/analytics/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /analytics/
+
+Sitemap: https://usman.engineer/sitemap.xml

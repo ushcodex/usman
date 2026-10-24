@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="110" fill="#B23F16"/>
+  <rect x="24" y="24" width="464" height="464" rx="90" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-opacity="0.25"/>
+  <!-- Orbital rings -->
+  <ellipse cx="256" cy="256" rx="190" ry="85" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-opacity="0.3" transform="rotate(-30 256 256)"/>
+  <ellipse cx="256" cy="256" rx="190" ry="85" fill="none" stroke="#F3E7D2" stroke-width="12" stroke-opacity="0.4" transform="rotate(30 256 256)"/>
+  <circle cx="256" cy="256" r="32" fill="#F3E7D2"/>
+  <!-- Monogram UA -->
+  <text x="256" y="390" font-family="Georgia, serif" font-size="110" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">UA</text>
+</svg>

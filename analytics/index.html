@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Analytics | Usman Shehu Ahmad</title>
   <meta name="robots" content="noindex, nofollow">
+
+  <!-- PWA & Mobile Capabilities -->
+  <meta name="theme-color" content="#1F1A15">
+  <meta name="color-scheme" content="light">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Analytics">
+  <link rel="manifest" href="/analytics/manifest.webmanifest">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/analytics/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/analytics/icon-192.png">
+  <link rel="apple-touch-icon" href="/analytics/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -537,9 +551,11 @@
         <button class="btn-chip" id="btnOptOut" title="Toggle excluding your own device from visits">
           👁️ <span id="optOutText">Exclude My Visits</span>
         </button>
-        <button class="btn-chip active" id="btn7d" onclick="setTimeframe(7)">7 Days</button>
-        <button class="btn-chip" id="btn14d" onclick="setTimeframe(14)">14 Days</button>
-        <button class="btn-chip" id="btn30d" onclick="setTimeframe(30)">30 Days</button>
+        <button class="btn-chip" id="btn7d" onclick="setTimeframe('7d')">7 Days</button>
+        <button class="btn-chip active" id="btn30d" onclick="setTimeframe('30d')">30 Days</button>
+        <button class="btn-chip" id="btn90d" onclick="setTimeframe('90d')">90 Days</button>
+        <button class="btn-chip" id="btn1y" onclick="setTimeframe('1y')">1 Year</button>
+        <button class="btn-chip" id="btnall" onclick="setTimeframe('all')" style="border-color:var(--terra);font-weight:800;">♾️ All Time</button>
         <button class="btn-chip" onclick="fetchStats()" title="Refresh stats">🔄 Refresh</button>
       </div>
     </div>
@@ -739,11 +755,13 @@
       setTimeout(() => { toast.style.display = 'none'; }, 3000);
     }
 
-    function setTimeframe(days) {
-      currentDays = days;
-      document.querySelectorAll('.btn-chip').forEach(b => {
-        if (b.id === 'btn' + days + 'd') b.classList.add('active');
-        else if (['btn7d', 'btn14d', 'btn30d'].includes(b.id)) b.classList.remove('active');
+    let currentRange = '30d';
+
+    function setTimeframe(range) {
+      currentRange = range;
+      ['btn7d', 'btn30d', 'btn90d', 'btn1y', 'btnall'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.classList.toggle('active', id === 'btn' + range);
       });
       fetchStats();
     }
@@ -790,7 +808,7 @@
         const headers = {};
         if (authKey) headers['Authorization'] = 'Bearer ' + authKey;
 
-        const res = await fetch(`/api/stats?days=${currentDays}`, { headers });
+        const res = await fetch(`/api/stats?range=${currentRange}`, { headers });
         if (res.status === 401) {
           document.getElementById('authModal').style.display = 'flex';
           document.getElementById('authError').style.display = authKey ? 'block' : 'none';
@@ -1051,6 +1069,12 @@
 
     // Auto-fetch on load
     fetchStats();
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
   </script>
 </body>
 </html>

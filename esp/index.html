@@ -2,7 +2,40 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ESP Edge Monitor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ESP Edge Monitor | AI Surveillance for ESP Fault Detection</title>
+<meta name="description" content="Real-time playback of Isolation Forest anomaly detection scoring on ESPset real offshore vibration records (Paper SPE-235017-MS). Authored by Usman Shehu Ahmad.">
+<link rel="canonical" href="https://usman.engineer/esp/">
+
+<!-- PWA & Mobile Capabilities -->
+<meta name="theme-color" content="#1A2E4A">
+<meta name="color-scheme" content="light">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ESP Monitor">
+<link rel="manifest" href="/esp/manifest.webmanifest">
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/esp/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/esp/icon-192.png">
+<link rel="apple-touch-icon" href="/esp/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Usman Shehu Ahmad">
+<meta property="og:title" content="ESP Edge Monitor | AI Vibration Surveillance">
+<meta property="og:description" content="Real-time playback of Isolation Forest anomaly detection on offshore ESP vibration records. AUC-ROC 0.9585, F1 0.921.">
+<meta property="og:image" content="https://usman.engineer/esp/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:url" content="https://usman.engineer/esp/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ESP Edge Monitor | AI Vibration Surveillance">
+<meta name="twitter:description" content="Real-time playback of Isolation Forest anomaly detection on offshore ESP vibration records (SPE-235017-MS).">
+<meta name="twitter:image" content="https://usman.engineer/esp/og-image.png">
 <style>
   :root{
     --navy:#1A2E4A; --blue:#0E4D94; --bluelight:#4FA8D8; --gold:#C9971F;
@@ -312,5 +345,12 @@ render();
 </script>
 <div class="back-foot"><a href="/">&larr; Back to the resume</a></div>
 <script defer src="/track.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
 </body>
 </html>

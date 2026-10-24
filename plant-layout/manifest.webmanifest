@@ -1,0 +1,31 @@
+{
+  "name": "10,000 TPA Lithium Carbonate Plant | 3D Layout",
+  "short_name": "Plant Layout",
+  "description": "Interactive Three.js 3D chemical plant layout for a 10,000 TPA battery-grade lithium carbonate facility.",
+  "start_url": "/plant-layout/",
+  "scope": "/plant-layout/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#14212B",
+  "theme_color": "#14212B",
+  "categories": ["education", "engineering", "utilities"],
+  "icons": [
+    {
+      "src": "/plant-layout/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/plant-layout/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/plant-layout/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

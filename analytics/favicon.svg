@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="110" fill="#1F1A15"/>
+  <rect x="24" y="24" width="464" height="464" rx="90" fill="none" stroke="#E3D5BC" stroke-width="8" stroke-opacity="0.3"/>
+  <!-- Bar chart bars -->
+  <rect x="110" y="280" width="56" height="130" rx="10" fill="#B23F16"/>
+  <rect x="195" y="190" width="56" height="220" rx="10" fill="#1E5A3F"/>
+  <rect x="280" y="240" width="56" height="170" rx="10" fill="#B23F16"/>
+  <rect x="365" y="120" width="56" height="290" rx="10" fill="#1E5A3F"/>
+  <!-- Trend line -->
+  <path d="M 138 260 L 223 170 L 308 220 L 393 100" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

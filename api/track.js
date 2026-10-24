@@ -1,7 +1,6 @@
 const crypto = require('crypto');
 
 module.exports = async function handler(req, res) {
-  // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -17,7 +16,6 @@ module.exports = async function handler(req, res) {
   const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL;
   const UPSTASH_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
 
-  // Graceful fallback if credentials are not yet configured in Vercel
   if (!UPSTASH_URL || !UPSTASH_TOKEN) {
     return res.status(200).json({
       status: 'pending_setup',
@@ -37,7 +35,7 @@ module.exports = async function handler(req, res) {
     const rawPath = (body.path || '/').split('?')[0];
     const path = rawPath.endsWith('/') && rawPath.length > 1 ? rawPath.slice(0, -1) : rawPath;
 
-    // Process Referrer
+    // Sanitize Referrer
     const rawRef = body.referrer || 'Direct';
     let referrer = 'Direct';
     if (rawRef && rawRef !== 'Direct' && rawRef !== 'Internal') {
@@ -56,7 +54,6 @@ module.exports = async function handler(req, res) {
     const city = req.headers['x-vercel-ip-city'] ? decodeURIComponent(req.headers['x-vercel-ip-city']) : 'Unknown';
     const userAgent = req.headers['user-agent'] || '';
 
-    // Device / Browser / OS detection from user-agent
     let browser = 'Other';
     if (/chrome|crios/i.test(userAgent) && !/edg|opr/i.test(userAgent)) browser = 'Chrome';
     else if (/safari/i.test(userAgent) && !/chrome/i.test(userAgent)) browser = 'Safari';
@@ -71,9 +68,14 @@ module.exports = async function handler(req, res) {
     else if (/iphone|ipad|ipod/i.test(userAgent)) os = 'iOS';
     else if (/linux/i.test(userAgent)) os = 'Linux';
 
-    // Privacy-safe daily visitor hash (IP is never stored)
+    // Privacy-preserving daily salt hash
     const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
-    const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    const now = new Date();
+    const today = now.toISOString().slice(0, 10); // YYYY-MM-DD
+    const month = today.slice(0, 7); // YYYY-MM
+    const year = today.slice(0, 4);  // YYYY
+    const todayTs = Math.floor(new Date(today).getTime() / 1000);
+
     const salt = process.env.ANALYTICS_SALT || 'usman-analytics-salt';
     const visitorHash = crypto.createHash('sha256')
       .update(`${ip}-${userAgent}-${today}-${salt}`)
@@ -82,19 +84,25 @@ module.exports = async function handler(req, res) {
     const pipeline = [];
 
     if (isEvent) {
-      // Record Custom Event
       pipeline.push(['ZINCRBY', 'analytics:events', 1, eventName]);
       pipeline.push(['INCR', 'analytics:events:total']);
     } else {
-      // Pageview counters
+      // 1. Maintain date registry for infinite historical queries
+      pipeline.push(['ZADD', 'analytics:dates', todayTs, today]);
+
+      // 2. Daily, Monthly, Yearly and All-Time Pageviews
       pipeline.push(['INCR', `analytics:pv:${today}`]);
+      pipeline.push(['INCR', `analytics:pv:m:${month}`]);
+      pipeline.push(['INCR', `analytics:pv:y:${year}`]);
       pipeline.push(['INCR', 'analytics:pv:total']);
 
-      // Unique visitors via Redis HyperLogLog (PFADD)
+      // 3. Unique visitors (HyperLogLog - zero data degradation over infinite time)
       pipeline.push(['PFADD', `analytics:unique:${today}`, visitorHash]);
+      pipeline.push(['PFADD', `analytics:unique:m:${month}`, visitorHash]);
+      pipeline.push(['PFADD', `analytics:unique:y:${year}`, visitorHash]);
       pipeline.push(['PFADD', 'analytics:unique:all', visitorHash]);
 
-      // Dimension Sorted Sets
+      // 4. Sorted sets for categorical breakdowns
       pipeline.push(['ZINCRBY', 'analytics:pages', 1, path]);
       if (referrer && referrer !== 'Internal') {
         pipeline.push(['ZINCRBY', 'analytics:referrers', 1, referrer]);
@@ -106,7 +114,7 @@ module.exports = async function handler(req, res) {
       pipeline.push(['ZINCRBY', 'analytics:os', 1, os]);
       pipeline.push(['ZINCRBY', 'analytics:browsers', 1, browser]);
 
-      // Recent visits stream (capped at latest 50 entries)
+      // 5. Recent visits log (last 50 events)
       const logEntry = JSON.stringify({
         ts: Date.now(),
         path,
@@ -121,7 +129,6 @@ module.exports = async function handler(req, res) {
       pipeline.push(['LTRIM', 'analytics:recent', 0, 49]);
     }
 
-    // Execute atomic batch in 1 HTTP roundtrip
     const upstashRes = await fetch(`${UPSTASH_URL}/pipeline`, {
       method: 'POST',
       headers: {

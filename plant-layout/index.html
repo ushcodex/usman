@@ -3,7 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>10,000 TPA Lithium Carbonate Plant, 3D layout</title>
+<title>10,000 TPA Lithium Carbonate Plant | 3D Interactive Layout</title>
+<meta name="description" content="Interactive Three.js 3D chemical plant layout for a 10,000 TPA battery-grade lithium carbonate facility from spodumene by sulfuric acid sulfation route. Designed by Usman Shehu Ahmad.">
+<link rel="canonical" href="https://usman.engineer/plant-layout/">
+
+<!-- PWA & Mobile Capabilities -->
+<meta name="theme-color" content="#14212B">
+<meta name="color-scheme" content="dark light">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Plant Layout">
+<link rel="manifest" href="/plant-layout/manifest.webmanifest">
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/plant-layout/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/plant-layout/icon-192.png">
+<link rel="apple-touch-icon" href="/plant-layout/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Usman Shehu Ahmad">
+<meta property="og:title" content="10,000 TPA Lithium Carbonate Plant | 3D Interactive Layout">
+<meta property="og:description" content="Interactive Three.js 3D chemical plant layout for a 10,000 TPA battery-grade lithium carbonate facility. Real process blocks, kilns, and equipment.">
+<meta property="og:image" content="https://usman.engineer/plant-layout/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:url" content="https://usman.engineer/plant-layout/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="10,000 TPA Lithium Carbonate Plant | 3D Interactive Layout">
+<meta name="twitter:description" content="Explore the interactive 3D chemical plant layout in Three.js by Usman Shehu Ahmad.">
+<meta name="twitter:image" content="https://usman.engineer/plant-layout/og-image.png">
 <style>
 :root{--bg:#f1f4f6;--fg:#14212b;--mut:#51636f;--line:#c9d4db;--acc:#0b5d85;--accfg:#fff}
 
@@ -534,5 +566,12 @@ requestAnimationFrame(loop);
 </script>
 <div class="back-foot"><a href="/">&larr; Back to the resume</a></div>
 <script defer src="/track.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
+</script>
 </body>
 </html>

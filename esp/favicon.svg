@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="110" fill="#1A2E4A"/>
+  <rect x="24" y="24" width="464" height="464" rx="90" fill="none" stroke="#4FA8D8" stroke-width="8" stroke-opacity="0.3"/>
+  <!-- Vibration Waveform -->
+  <path d="M 60 256 L 140 256 L 175 160 L 220 370 L 265 110 L 310 390 L 345 210 L 375 290 L 410 256 L 452 256" fill="none" stroke="#8FE3B0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- AI indicator dot -->
+  <circle cx="265" cy="110" r="22" fill="#C9971F"/>
+  <circle cx="265" cy="110" r="32" fill="none" stroke="#C9971F" stroke-width="6" stroke-opacity="0.6"/>
+</svg>
