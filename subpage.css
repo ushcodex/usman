@@ -1,0 +1,63 @@
+/* Shared theme for usman.engineer subpages. Matches the resume page. */
+:root{--cream:#FBF5EA;--sand:#F3E7D2;--ink:#1F1A15;--muted:#4A4137;--terra:#B23F16;--terra-dark:#8F3010;--green:#1E5A3F;--sky:#DCEBF5;--line:#E3D5BC}
+html{font-size:19px}
+body{background:var(--cream)!important;color:var(--ink)!important;font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif!important;font-size:1rem;line-height:1.6}
+.site-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.7rem 1.4rem;background:rgba(251,245,234,.97);border-bottom:2px solid var(--line);font-weight:800}
+.site-nav a{color:var(--terra-dark);text-decoration:none}
+.site-nav a:hover{text-decoration:underline}
+.site-nav .name{font-family:"Fraunces",Georgia,serif;color:var(--ink)}
+.intro{max-width:1100px;margin:1.4rem auto 0;padding:0 1.4rem}
+.intro .box{background:#fff;border:2px solid var(--line);border-radius:18px;padding:1.2rem 1.5rem;box-shadow:0 4px 0 var(--line)}
+.intro h1{font-family:"Fraunces",Georgia,serif;font-size:1.9rem;margin:0 0 .4rem;color:var(--ink)}
+.intro p{margin:.3rem 0;font-size:1.05rem;color:var(--muted)}
+.intro .res{background:var(--sky);border-radius:12px;padding:.5rem .9rem;margin-top:.7rem;color:var(--ink)}
+.back-foot{text-align:center;padding:2rem 1rem 3rem;font-weight:800}
+.back-foot a{color:var(--terra-dark)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--green)!important;outline-offset:3px}
+
+/* ESP page overrides */
+.header{background:var(--sand)!important;border-bottom:2px solid var(--line)}
+.brand-icon{color:var(--terra)!important}
+.brand-title{color:var(--ink)!important;font-family:"Fraunces",Georgia,serif;font-size:1.25rem!important}
+.brand-sub{color:var(--muted)!important;font-size:.9rem!important}
+.status{font-size:.95rem!important;color:var(--ink)}
+.wifi{color:var(--green)!important}
+.clock{color:var(--ink)!important;font-size:1.05rem!important}
+.controls,.panel{border:2px solid var(--line)!important;border-radius:18px!important;box-shadow:0 4px 0 var(--line)}
+.btn-play{background:var(--terra)!important;font-size:1rem!important;border-radius:12px!important;padding:.6rem 1.1rem!important}
+.btn-reset{font-size:1rem!important;border-radius:12px!important;color:var(--ink)!important;border:2px solid var(--line)!important}
+.speed-group{font-size:1rem!important}
+.speed-btn{font-size:.9rem!important;padding:.3rem .7rem!important;color:var(--ink)!important;border:2px solid var(--line)!important}
+.speed-btn.active{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}
+input[type=range]{accent-color:var(--terra)!important}
+.scrub-labels{font-size:.9rem!important;color:var(--muted)!important}
+.panel-title{font-size:1rem!important;color:var(--ink)!important;letter-spacing:.02em}
+.badge{font-size:.85rem!important;padding:.25rem .8rem!important}
+.score-value{font-size:2.2rem!important;color:var(--ink)!important}
+.score-sub{font-size:.95rem!important;color:var(--muted)!important}
+.log-row{font-size:1rem!important}
+.log-score{font-size:.9rem!important}
+.log-empty{font-size:1rem!important;color:var(--muted)!important}
+.hmi{background:var(--green)!important;border-radius:18px!important;box-shadow:0 4px 0 #14402C}
+.hmi-title{color:#E8F3EC!important;font-size:.95rem!important}
+.hmi-grid{font-size:1rem!important}
+.hmi-row{border-bottom:1px solid rgba(255,255,255,.28)!important}
+.hmi-name{color:#E8F3EC!important}
+.hmi-val{color:#FFE9B8!important}
+.hmi-truth{color:#E8F3EC!important;font-size:.9rem!important}
+.footnote{font-size:.9rem!important;color:var(--muted)!important}
+
+/* Plant layout overrides: always the light theme */
+:root{--bg:#FBF5EA;--fg:#1F1A15;--mut:#4A4137;--line:#E3D5BC;--acc:#B23F16;--accfg:#fff}
+main{padding:1.4rem!important}
+main h1{font-family:"Fraunces",Georgia,serif;font-size:1.7rem!important;font-weight:700!important;color:var(--ink)}
+#status{font-size:1rem;color:var(--muted)!important}
+.stage{border:4px solid #fff;border-radius:18px!important;box-shadow:0 12px 30px rgba(31,26,21,.18)}
+button,a.btn{font-size:1rem!important;border:2px solid var(--line)!important;border-radius:12px!important;padding:.55rem 1.1rem!important;color:var(--ink)}
+button.p,a.btn.p{background:var(--terra)!important;border-color:var(--terra)!important;color:#fff!important}
+
+main>h1{display:none}
+.hmi-truth *{color:#FFE9B8!important}
+.panel svg text{fill:#4A4137!important;font-size:13px!important}
+body:has(main) .intro{max-width:1280px}
+.intro h1{line-height:1.25}
