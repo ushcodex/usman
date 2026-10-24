@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics | Usman Shehu Ahmad</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FBF5EA;
+      --sand: #F3E7D2;
+      --card: #FFFFFF;
+      --ink: #1F1A15;
+      --muted: #5C5247;
+      --line: #E3D5BC;
+      --terra: #B23F16;
+      --terra-dark: #8F3010;
+      --terra-soft: #F9EBE6;
+      --green: #1E5A3F;
+      --green-soft: #E4F1EB;
+      --blue: #1D5D8A;
+      --blue-soft: #E6F1F8;
+      --font-title: "Fraunces", Georgia, serif;
+      --font-body: "Nunito", system-ui, -apple-system, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: #FFFFFF;
+      border-bottom: 2px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-title {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      background: var(--green-soft);
+      color: var(--green);
+      letter-spacing: 0.3px;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 1.6s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .btn-chip {
+      background: var(--sand);
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      padding: 0.4rem 0.8rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .btn-chip:hover {
+      background: #FFFFFF;
+      border-color: var(--terra);
+      color: var(--terra);
+    }
+    .btn-chip.active {
+      background: var(--terra);
+      color: #FFFFFF;
+      border-color: var(--terra-dark);
+    }
+
+    /* Container */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.4rem 3rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* Setup Banner */
+    .setup-banner {
+      background: #FFFDF9;
+      border: 2px solid var(--terra);
+      border-radius: 16px;
+      padding: 1.4rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(178,63,22,0.08);
+    }
+    .setup-banner h3 {
+      font-family: var(--font-title);
+      color: var(--terra-dark);
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+    .setup-banner p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+    .setup-steps {
+      list-style: decimal inside;
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    .setup-steps code {
+      font-family: var(--font-mono);
+      background: var(--sand);
+      padding: 0.15rem 0.4rem;
+      border-radius: 5px;
+      font-weight: 600;
+      color: var(--terra-dark);
+    }
+
+    /* Login Screen */
+    .auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(31,26,21,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .auth-card {
+      background: #FFFFFF;
+      border: 2px solid var(--line);
+      border-radius: 20px;
+      padding: 2.2rem 2rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+      text-align: center;
+    }
+    .auth-card h2 {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+      color: var(--ink);
+    }
+    .auth-card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+    .auth-input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      outline: none;
+      margin-bottom: 1rem;
+      transition: border-color 0.15s;
+    }
+    .auth-input:focus {
+      border-color: var(--terra);
+    }
+    .auth-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--terra);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .auth-btn:hover {
+      background: var(--terra-dark);
+    }
+    .auth-err {
+      color: #D32F2F;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.6rem;
+      display: none;
+    }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.1rem;
+      margin-bottom: 1.6rem;
+    }
+    .kpi-card {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      padding: 1.25rem 1.4rem;
+      box-shadow: 0 4px 0 var(--line);
+      position: relative;
+    }
+    .kpi-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 0.35rem;
+    }
+    .kpi-value {
+      font-family: var(--font-title);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+    .kpi-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-weight: 600;
+    }
+    .kpi-sub.terra { color: var(--terra); font-weight: 700; }
+    .kpi-sub.green { color: var(--green); font-weight: 700; }
+
+    /* Chart Section */
+    .chart-card {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 0 var(--line);
+    }
+    .chart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .chart-head h3 {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+    }
+    .legend {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+    .legend-pv { background: var(--terra); }
+    .legend-uv { background: var(--green); }
+
+    .chart-svg-container {
+      width: 100%;
+      height: 240px;
+      position: relative;
+    }
+    .chart-svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .tooltip {
+      position: absolute;
+      background: var(--ink);
+      color: #FFFFFF;
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      transform: translate(-50%, -120%);
+      white-space: nowrap;
+      z-index: 50;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+
+    /* Breakdown Grid */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.3rem;
+      margin-bottom: 1.8rem;
+    }
+    .panel {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      padding: 1.3rem;
+      box-shadow: 0 4px 0 var(--line);
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1.5px solid var(--line);
+    }
+    .panel-head h4 {
+      font-family: var(--font-title);
+      font-size: 1.1rem;
+    }
+    .panel-head span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .stat-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      flex: 1;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .stat-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .stat-name {
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--ink);
+    }
+    .stat-count {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .bar-bg {
+      height: 7px;
+      background: var(--sand);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--terra);
+      border-radius: 99px;
+      transition: width 0.4s ease-out;
+    }
+    .bar-fill.green { background: var(--green); }
+    .bar-fill.blue { background: var(--blue); }
+
+    /* Recent Visits Table */
+    .table-card {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      padding: 1.4rem;
+      box-shadow: 0 4px 0 var(--line);
+      overflow-x: auto;
+    }
+    .table-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.1rem;
+    }
+    .table-head h4 {
+      font-family: var(--font-title);
+      font-size: 1.15rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    th {
+      padding: 0.65rem 0.8rem;
+      border-bottom: 2px solid var(--line);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 0.75rem 0.8rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .chip-badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--sand);
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .chip-badge.path {
+      font-family: var(--font-mono);
+      background: var(--terra-soft);
+      border-color: rgba(178,63,22,0.2);
+      color: var(--terra-dark);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--ink);
+      color: #FFFFFF;
+      padding: 0.75rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 300;
+      animation: fadeIn 0.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .empty-state {
+      padding: 2.5rem 1rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .header-actions { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <a href="/" class="brand-title">Usman Shehu Ahmad</a>
+        <span style="color:var(--line);font-weight:bold;">/</span>
+        <span style="font-weight:800;font-size:0.95rem;color:var(--terra-dark);">Analytics</span>
+        <span class="badge-live">
+          <span class="live-dot"></span>
+          Live
+        </span>
+      </div>
+      <div class="header-actions">
+        <button class="btn-chip" id="btnOptOut" title="Toggle excluding your own device from visits">
+          👁️ <span id="optOutText">Exclude My Visits</span>
+        </button>
+        <button class="btn-chip active" id="btn7d" onclick="setTimeframe(7)">7 Days</button>
+        <button class="btn-chip" id="btn14d" onclick="setTimeframe(14)">14 Days</button>
+        <button class="btn-chip" id="btn30d" onclick="setTimeframe(30)">30 Days</button>
+        <button class="btn-chip" onclick="fetchStats()" title="Refresh stats">🔄 Refresh</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Setup Banner (Shown only if env vars not set) -->
+    <div id="setupBanner" class="setup-banner" style="display:none;">
+      <h3>⚡ Upstash Redis Configuration Required</h3>
+      <p>Your analytics endpoints are deployed! To start storing live traffic, connect a free Upstash Redis database in Vercel:</p>
+      <ol class="setup-steps">
+        <li>Log in to <a href="https://upstash.com" target="_blank" rel="noopener" style="color:var(--terra-dark);font-weight:800;">Upstash.com</a> and click <b>Create Database</b> (Free tier: 10,000 commands/day).</li>
+        <li>Scroll down to the <b>REST API</b> section on your database page.</li>
+        <li>Go to your <b>Vercel Project Dashboard &gt; Settings &gt; Environment Variables</b> and add:
+          <br>• <code>UPSTASH_REDIS_REST_URL</code> = <i>Your Upstash REST URL</i>
+          <br>• <code>UPSTASH_REDIS_REST_TOKEN</code> = <i>Your Upstash REST Token</i>
+          <br>• <code>ADMIN_PASSWORD</code> = <i>Your chosen secret password for this dashboard</i>
+        </li>
+        <li>Trigger a redeploy on Vercel or commit a change. That's it!</li>
+      </ol>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Pageviews (Period)</div>
+        <div class="kpi-value" id="valRangePv">-</div>
+        <div class="kpi-sub terra" id="valTodayPv">Today: -</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Unique Visitors (Period)</div>
+        <div class="kpi-value" id="valRangeUv">-</div>
+        <div class="kpi-sub green" id="valTodayUv">Today: -</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">All-Time Pageviews</div>
+        <div class="kpi-value" id="valTotalPv">-</div>
+        <div class="kpi-sub">Total verified hits</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">All-Time Unique Visitors</div>
+        <div class="kpi-value" id="valTotalUv">-</div>
+        <div class="kpi-sub">Privacy-hashed visitors</div>
+      </div>
+    </div>
+
+    <!-- Chart Card -->
+    <div class="chart-card">
+      <div class="chart-head">
+        <div>
+          <h3>Traffic Over Time</h3>
+          <p style="font-size:0.82rem;color:var(--muted);font-weight:600;">Daily Pageviews and Unique Visitors</p>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><span class="legend-color legend-pv"></span> Pageviews</div>
+          <div class="legend-item"><span class="legend-color legend-uv"></span> Unique Visitors</div>
+        </div>
+      </div>
+      <div class="chart-svg-container" id="chartContainer">
+        <svg class="chart-svg" id="chartSvg" viewBox="0 0 1000 240" preserveAspectRatio="none"></svg>
+        <div class="tooltip" id="chartTooltip"></div>
+      </div>
+    </div>
+
+    <!-- Two Column Breakdowns -->
+    <div class="two-col-grid">
+      <!-- Top Pages -->
+      <div class="panel">
+        <div class="panel-head">
+          <h4>Top Pages</h4>
+          <span>Views</span>
+        </div>
+        <ul class="stat-list" id="listPages">
+          <li class="empty-state">No page data yet</li>
+        </ul>
+      </div>
+
+      <!-- Top Referrers -->
+      <div class="panel">
+        <div class="panel-head">
+          <h4>Traffic Sources / Referrers</h4>
+          <span>Visits</span>
+        </div>
+        <ul class="stat-list" id="listReferrers">
+          <li class="empty-state">No referrer data yet</li>
+        </ul>
+      </div>
+
+      <!-- Countries -->
+      <div class="panel">
+        <div class="panel-head">
+          <h4>Geographic Locations</h4>
+          <span>Visitors</span>
+        </div>
+        <ul class="stat-list" id="listCountries">
+          <li class="empty-state">No country data yet</li>
+        </ul>
+      </div>
+
+      <!-- Devices & Systems -->
+      <div class="panel">
+        <div class="panel-head">
+          <h4>Devices &amp; Browsers</h4>
+          <span>Share</span>
+        </div>
+        <ul class="stat-list" id="listDevices">
+          <li class="empty-state">No device data yet</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Custom Events Panel -->
+    <div class="panel" style="margin-bottom: 1.8rem;">
+      <div class="panel-head">
+        <h4>Interactive Actions &amp; Events</h4>
+        <span>Total Triggers</span>
+      </div>
+      <ul class="stat-list" id="listEvents">
+        <li class="empty-state">No custom events recorded yet</li>
+      </ul>
+    </div>
+
+    <!-- Recent Visits Table -->
+    <div class="table-card">
+      <div class="table-head">
+        <h4>Recent Real-Time Visits</h4>
+        <span style="font-size:0.82rem;color:var(--muted);font-weight:700;">Latest 50 events</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Page</th>
+            <th>Referrer</th>
+            <th>Device &amp; Browser</th>
+          </tr>
+        </thead>
+        <tbody id="tableRecent">
+          <tr><td colspan="5" class="empty-state">No recent visits recorded</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Auth Modal -->
+  <div class="auth-overlay" id="authModal" style="display:none;">
+    <div class="auth-card">
+      <h2>Private Analytics</h2>
+      <p>Enter your secret password to unlock your personal site statistics.</p>
+      <input type="password" id="authPassword" class="auth-input" placeholder="Enter ADMIN_PASSWORD..." autofocus>
+      <button class="auth-btn" onclick="submitAuth()">Unlock Dashboard</button>
+      <div class="auth-err" id="authError">Incorrect password. Please try again.</div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toastMessage"></div>
+
+  <script>
+    let currentDays = 7;
+    let authKey = sessionStorage.getItem('usman_analytics_key') || '';
+
+    // Opt-out logic for site owner
+    const optOutBtn = document.getElementById('btnOptOut');
+    const optOutText = document.getElementById('optOutText');
+
+    function updateOptOutUI() {
+      const isOptedOut = localStorage.getItem('usman_analytics_optout') === '1';
+      if (isOptedOut) {
+        optOutText.textContent = 'Visits: Excluded (Own Device)';
+        optOutBtn.classList.add('active');
+      } else {
+        optOutText.textContent = 'Exclude My Visits';
+        optOutBtn.classList.remove('active');
+      }
+    }
+
+    optOutBtn.addEventListener('click', () => {
+      const isOptedOut = localStorage.getItem('usman_analytics_optout') === '1';
+      if (isOptedOut) {
+        localStorage.removeItem('usman_analytics_optout');
+        showToast('Your visits will now be tracked.');
+      } else {
+        localStorage.setItem('usman_analytics_optout', '1');
+        showToast('Your visits on this device are now excluded.');
+      }
+      updateOptOutUI();
+    });
+    updateOptOutUI();
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastMessage');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    }
+
+    function setTimeframe(days) {
+      currentDays = days;
+      document.querySelectorAll('.btn-chip').forEach(b => {
+        if (b.id === 'btn' + days + 'd') b.classList.add('active');
+        else if (['btn7d', 'btn14d', 'btn30d'].includes(b.id)) b.classList.remove('active');
+      });
+      fetchStats();
+    }
+
+    function submitAuth() {
+      const val = document.getElementById('authPassword').value.trim();
+      if (!val) return;
+      authKey = val;
+      sessionStorage.setItem('usman_analytics_key', val);
+      document.getElementById('authModal').style.display = 'none';
+      fetchStats();
+    }
+
+    document.getElementById('authPassword').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitAuth();
+    });
+
+    // Country Code to Flag Emoji
+    function getCountryFlag(code) {
+      if (!code || code === 'Unknown' || code.length !== 2) return '🌐';
+      const c = code.toUpperCase();
+      return String.fromCodePoint(...[...c].map(char => 127397 + char.charCodeAt()));
+    }
+
+    function formatNumber(num) {
+      if (num === null || num === undefined) return '0';
+      return new Intl.NumberFormat().format(num);
+    }
+
+    function timeAgo(ts) {
+      if (!ts) return 'just now';
+      const sec = Math.floor((Date.now() - ts) / 1000);
+      if (sec < 60) return 'just now';
+      const min = Math.floor(sec / 60);
+      if (min < 60) return `${min}m ago`;
+      const hrs = Math.floor(min / 60);
+      if (hrs < 24) return `${hrs}h ago`;
+      const days = Math.floor(hrs / 24);
+      return `${days}d ago`;
+    }
+
+    async function fetchStats() {
+      try {
+        const headers = {};
+        if (authKey) headers['Authorization'] = 'Bearer ' + authKey;
+
+        const res = await fetch(`/api/stats?days=${currentDays}`, { headers });
+        if (res.status === 401) {
+          document.getElementById('authModal').style.display = 'flex';
+          document.getElementById('authError').style.display = authKey ? 'block' : 'none';
+          return;
+        }
+
+        const data = await res.json();
+
+        if (data.pending_setup) {
+          document.getElementById('setupBanner').style.display = 'block';
+          renderDemoData();
+          return;
+        } else {
+          document.getElementById('setupBanner').style.display = 'none';
+        }
+
+        renderDashboard(data);
+      } catch (err) {
+        console.error('Fetch error:', err);
+      }
+    }
+
+    function renderDashboard(data) {
+      const summary = data.summary || {};
+      document.getElementById('valRangePv').textContent = formatNumber(summary.rangePv);
+      document.getElementById('valTodayPv').textContent = `Today: ${formatNumber(summary.todayPv)}`;
+      document.getElementById('valRangeUv').textContent = formatNumber(summary.rangeUnique);
+      document.getElementById('valTodayUv').textContent = `Today: ${formatNumber(summary.todayUnique)}`;
+      document.getElementById('valTotalPv').textContent = formatNumber(summary.totalPv);
+      document.getElementById('valTotalUv').textContent = formatNumber(summary.totalUnique);
+
+      renderChart(data.daily || []);
+      renderBarList('listPages', data.pages, 'path');
+      renderBarList('listReferrers', data.referrers, 'source');
+      renderCountryList('listCountries', data.countries);
+      renderDeviceList('listDevices', data.devices, data.browsers);
+      renderBarList('listEvents', data.events, 'event');
+      renderRecentTable(data.recent || []);
+    }
+
+    function renderBarList(elementId, items, type) {
+      const el = document.getElementById(elementId);
+      if (!items || items.length === 0) {
+        el.innerHTML = '<li class="empty-state">No data recorded yet</li>';
+        return;
+      }
+      const max = Math.max(...items.map(i => i.count), 1);
+      el.innerHTML = items.map(item => {
+        const pct = Math.round((item.count / max) * 100);
+        let label = item.name;
+        if (type === 'path' && label === '/') label = '/ (Homepage)';
+        return `
+          <li class="stat-item">
+            <div class="stat-item-row">
+              <span class="stat-name" title="${item.name}">${label}</span>
+              <span class="stat-count">${formatNumber(item.count)}</span>
+            </div>
+            <div class="bar-bg">
+              <div class="bar-fill" style="width: ${pct}%;"></div>
+            </div>
+          </li>
+        `;
+      }).join('');
+    }
+
+    function renderCountryList(elementId, items) {
+      const el = document.getElementById(elementId);
+      if (!items || items.length === 0) {
+        el.innerHTML = '<li class="empty-state">No country data recorded yet</li>';
+        return;
+      }
+      const max = Math.max(...items.map(i => i.count), 1);
+      el.innerHTML = items.map(item => {
+        const pct = Math.round((item.count / max) * 100);
+        const flag = getCountryFlag(item.name);
+        return `
+          <li class="stat-item">
+            <div class="stat-item-row">
+              <span class="stat-name">${flag} ${item.name}</span>
+              <span class="stat-count">${formatNumber(item.count)}</span>
+            </div>
+            <div class="bar-bg">
+              <div class="bar-fill green" style="width: ${pct}%;"></div>
+            </div>
+          </li>
+        `;
+      }).join('');
+    }
+
+    function renderDeviceList(elementId, devices, browsers) {
+      const el = document.getElementById(elementId);
+      const combined = [...(devices || []), ...(browsers || [])];
+      if (combined.length === 0) {
+        el.innerHTML = '<li class="empty-state">No device data yet</li>';
+        return;
+      }
+      const max = Math.max(...combined.map(i => i.count), 1);
+      el.innerHTML = combined.slice(0, 8).map(item => {
+        const pct = Math.round((item.count / max) * 100);
+        return `
+          <li class="stat-item">
+            <div class="stat-item-row">
+              <span class="stat-name">${item.name}</span>
+              <span class="stat-count">${formatNumber(item.count)}</span>
+            </div>
+            <div class="bar-bg">
+              <div class="bar-fill blue" style="width: ${pct}%;"></div>
+            </div>
+          </li>
+        `;
+      }).join('');
+    }
+
+    function renderRecentTable(recent) {
+      const tbody = document.getElementById('tableRecent');
+      if (!recent || recent.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No recent activity recorded yet</td></tr>';
+        return;
+      }
+      tbody.innerHTML = recent.map(r => {
+        const flag = getCountryFlag(r.c);
+        const loc = r.city ? `${flag} ${r.city}, ${r.c}` : `${flag} ${r.c}`;
+        const ref = r.ref === 'Direct' ? '<span style="color:var(--muted)">Direct</span>' : `<b>${r.ref}</b>`;
+        const dev = `${r.b || ''} • ${r.d || 'Desktop'}`;
+        return `
+          <tr>
+            <td style="color:var(--muted);white-space:nowrap;">${timeAgo(r.ts)}</td>
+            <td style="font-weight:700;">${loc}</td>
+            <td><span class="chip-badge path">${r.path}</span></td>
+            <td>${ref}</td>
+            <td style="font-size:0.82rem;color:var(--muted);">${dev}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Interactive SVG Chart Renderer
+    function renderChart(daily) {
+      const svg = document.getElementById('chartSvg');
+      const tooltip = document.getElementById('chartTooltip');
+      if (!daily || daily.length === 0) {
+        svg.innerHTML = '';
+        return;
+      }
+
+      const W = 1000;
+      const H = 220;
+      const padX = 40;
+      const padY = 30;
+
+      const maxVal = Math.max(...daily.map(d => Math.max(d.pv, d.unique)), 5);
+      const stepX = (W - padX * 2) / Math.max(daily.length - 1, 1);
+
+      function getY(val) {
+        return H - padY - (val / maxVal) * (H - padY * 2);
+      }
+
+      const pvPoints = daily.map((d, i) => `${padX + i * stepX},${getY(d.pv)}`);
+      const uvPoints = daily.map((d, i) => `${padX + i * stepX},${getY(d.unique)}`);
+
+      // Grid lines
+      let gridSvg = '';
+      for (let i = 0; i <= 4; i++) {
+        const y = padY + i * ((H - padY * 2) / 4);
+        const val = Math.round(maxVal - (i / 4) * maxVal);
+        gridSvg += `
+          <line x1="${padX}" y1="${y}" x2="${W - padX}" y2="${y}" stroke="var(--line)" stroke-dasharray="4,4" stroke-width="1.2" />
+          <text x="${padX - 8}" y="${y + 4}" font-family="var(--font-mono)" font-size="10" fill="var(--muted)" text-anchor="end">${val}</text>
+        `;
+      }
+
+      // PV Path and Fill
+      const pvLine = `M ${pvPoints.join(' L ')}`;
+      const pvArea = `M ${padX},${H - padY} L ${pvPoints.join(' L ')} L ${padX + (daily.length - 1) * stepX},${H - padY} Z`;
+
+      // UV Path
+      const uvLine = `M ${uvPoints.join(' L ')}`;
+
+      // Dots and interactors
+      let interactors = '';
+      daily.forEach((d, i) => {
+        const x = padX + i * stepX;
+        const yPv = getY(d.pv);
+        const yUv = getY(d.unique);
+
+        // Date label on x-axis (sampled if many days)
+        const showLabel = daily.length <= 14 || i % Math.ceil(daily.length / 8) === 0 || i === daily.length - 1;
+        const dateFormatted = d.date.slice(5);
+
+        interactors += `
+          ${showLabel ? `<text x="${x}" y="${H - 8}" font-family="var(--font-mono)" font-size="10" fill="var(--muted)" text-anchor="middle">${dateFormatted}</text>` : ''}
+          <circle cx="${x}" cy="${yPv}" r="4" fill="var(--terra)" />
+          <circle cx="${x}" cy="${yUv}" r="3.5" fill="var(--green)" />
+          <rect x="${x - stepX/2}" y="0" width="${stepX}" height="${H}" fill="transparent" style="cursor:pointer;"
+            data-date="${d.date}" data-pv="${d.pv}" data-uv="${d.unique}" class="chart-col" />
+        `;
+      });
+
+      svg.innerHTML = `
+        <defs>
+          <linearGradient id="pvGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--terra)" stop-opacity="0.18" />
+            <stop offset="100%" stop-color="var(--terra)" stop-opacity="0.0" />
+          </linearGradient>
+        </defs>
+        ${gridSvg}
+        <path d="${pvArea}" fill="url(#pvGrad)" />
+        <path d="${pvLine}" fill="none" stroke="var(--terra)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="${uvLine}" fill="none" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        ${interactors}
+      `;
+
+      // Attach tooltip hover events
+      svg.querySelectorAll('.chart-col').forEach(col => {
+        col.addEventListener('mouseenter', (e) => {
+          const rect = col.getBoundingClientRect();
+          const container = document.getElementById('chartContainer').getBoundingClientRect();
+          const date = col.getAttribute('data-date');
+          const pv = col.getAttribute('data-pv');
+          const uv = col.getAttribute('data-uv');
+
+          tooltip.innerHTML = `<b>${date}</b><br><span style="color:#FFA685">●</span> Views: ${pv}<br><span style="color:#9AE2B9">●</span> Uniques: ${uv}`;
+          tooltip.style.left = `${rect.left - container.left + rect.width / 2}px`;
+          tooltip.style.top = `60px`;
+          tooltip.style.opacity = '1';
+        });
+        col.addEventListener('mouseleave', () => {
+          tooltip.style.opacity = '0';
+        });
+      });
+    }
+
+    function renderDemoData() {
+      // Friendly preview demonstration when setup banner is visible
+      const dummyDates = [];
+      const now = new Date();
+      for (let i = 6; i >= 0; i--) {
+        const d = new Date(now);
+        d.setDate(d.getDate() - i);
+        dummyDates.push(d.toISOString().slice(0, 10));
+      }
+      renderDashboard({
+        summary: { rangePv: 148, rangeUnique: 82, todayPv: 26, todayUnique: 14, totalPv: 320, totalUnique: 195 },
+        daily: dummyDates.map((date, idx) => ({ date, pv: [12, 18, 22, 19, 31, 20, 26][idx], unique: [8, 11, 14, 10, 18, 9, 14][idx] })),
+        pages: [{ name: '/', count: 88 }, { name: '/plant-layout', count: 38 }, { name: '/esp', count: 22 }],
+        referrers: [{ name: 'linkedin.com', count: 54 }, { name: 'Direct', count: 42 }, { name: 'google.com', count: 28 }, { name: 'x.com', count: 16 }],
+        countries: [{ name: 'NG', count: 68 }, { name: 'US', count: 32 }, { name: 'GB', count: 24 }, { name: 'DE', count: 12 }],
+        devices: [{ name: 'Desktop', count: 84 }, { name: 'Mobile', count: 58 }, { name: 'Tablet', count: 6 }],
+        browsers: [{ name: 'Chrome', count: 92 }, { name: 'Safari', count: 38 }, { name: 'Firefox', count: 18 }],
+        events: [{ name: 'Project: 3D Plant Layout', count: 32 }, { name: 'Project: ESP Fault Detection', count: 26 }, { name: 'External: SPE Paper DOI', count: 19 }],
+        recent: [
+          { ts: Date.now() - 120000, path: '/plant-layout', ref: 'linkedin.com', c: 'NG', city: 'Abuja', d: 'Desktop', b: 'Chrome' },
+          { ts: Date.now() - 480000, path: '/', ref: 'Direct', c: 'US', city: 'Houston', d: 'Desktop', b: 'Safari' },
+          { ts: Date.now() - 1500000, path: '/esp', ref: 'google.com', c: 'GB', city: 'London', d: 'Mobile', b: 'Chrome' }
+        ]
+      });
+    }
+
+    // Auto-fetch on load
+    fetchStats();
+  </script>
+</body>
+</html>
