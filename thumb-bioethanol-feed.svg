@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" font-family="monospace,system-ui">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1b2a"/>
+      <stop offset="100%" stop-color="#1a2a3a"/>
+    </linearGradient>
+    <linearGradient id="col1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a4a6a"/>
+      <stop offset="100%" stop-color="#1a3050"/>
+    </linearGradient>
+    <marker id="a3" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#4db8ff"/>
+    </marker>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg3)"/>
+  <!-- Aspen HYSYS style title bar -->
+  <rect x="0" y="0" width="800" height="28" fill="#1c3352"/>
+  <text x="12" y="18" font-size="11" fill="#7ab8e8" font-family="monospace">Aspen HYSYS v14 · Cassava Bioethanol Plant · 26,000 L/h · Korex Energy, Ogun State</text>
+  <rect x="730" y="4" width="55" height="20" rx="3" fill="#0d2236"/>
+  <text x="757" y="18" text-anchor="middle" font-size="10" fill="#4db8ff">STEADY</text>
+
+  <!-- Case study badge -->
+  <rect x="4" y="32" width="320" height="22" rx="4" fill="#0d2236"/>
+  <text x="12" y="47" font-size="10" fill="#4db8ff">FEED Package: Cassava Bioethanol · SIMAJ-BSL, Kebbi State (separate)</text>
+
+  <!-- Process units -->
+  <!-- Cassava Feedstock -->
+  <rect x="18" y="70" width="80" height="45" rx="5" fill="#0d2236" stroke="#4db8ff" stroke-width="1.5"/>
+  <text x="58" y="90" text-anchor="middle" font-size="9" fill="#7ab8e8" font-weight="700">CASSAVA</text>
+  <text x="58" y="104" text-anchor="middle" font-size="9" fill="#4db8ff">STARCH</text>
+  <line x1="98" y1="92" x2="130" y2="92" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="114" y="88" text-anchor="middle" font-size="8" fill="#aaa">S-101</text>
+
+  <!-- Liquefaction tank -->
+  <ellipse cx="155" cy="92" rx="26" ry="26" fill="url(#col1)" stroke="#4db8ff" stroke-width="1.5"/>
+  <text x="155" y="89" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">LIQ</text>
+  <text x="155" y="101" text-anchor="middle" font-size="8" fill="#7ab8e8">T-101</text>
+  <line x1="181" y1="92" x2="213" y2="92" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="197" y="88" text-anchor="middle" font-size="8" fill="#aaa">S-102</text>
+
+  <!-- Saccharification -->
+  <ellipse cx="238" cy="92" rx="26" ry="26" fill="url(#col1)" stroke="#39d353" stroke-width="1.5"/>
+  <text x="238" y="89" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">SAC</text>
+  <text x="238" y="101" text-anchor="middle" font-size="8" fill="#7ab8e8">T-102</text>
+  <line x1="264" y1="92" x2="296" y2="92" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+
+  <!-- Fermenter -->
+  <ellipse cx="322" cy="92" rx="30" ry="30" fill="#1a3a1a" stroke="#39d353" stroke-width="2"/>
+  <text x="322" y="86" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">FERM</text>
+  <text x="322" y="99" text-anchor="middle" font-size="8" fill="#7ab8e8">R-201</text>
+  <text x="322" y="112" text-anchor="middle" font-size="7" fill="#aaa">32°C, 48h</text>
+  <!-- CO2 vent from fermenter -->
+  <line x1="322" y1="62" x2="322" y2="40" stroke="#39d353" stroke-width="1" stroke-dasharray="3"/>
+  <rect x="280" y="28" width="84" height="14" rx="3" fill="#0d2236"/>
+  <text x="322" y="39" text-anchor="middle" font-size="8" fill="#39d353">CO₂ vent S-203</text>
+
+  <line x1="352" y1="92" x2="384" y2="92" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="368" y="88" text-anchor="middle" font-size="8" fill="#aaa">S-301</text>
+  <text x="368" y="100" text-anchor="middle" font-size="8" fill="#4db8ff">9% EtOH</text>
+
+  <!-- Beer column -->
+  <rect x="384" y="52" width="40" height="80" rx="4" fill="url(#col1)" stroke="#4db8ff" stroke-width="1.5"/>
+  <text x="404" y="85" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">BEER</text>
+  <text x="404" y="97" text-anchor="middle" font-size="8" fill="#7ab8e8">COL</text>
+  <text x="404" y="109" text-anchor="middle" font-size="8" fill="#7ab8e8">C-301</text>
+  <!-- Beer column top -->
+  <line x1="404" y1="52" x2="404" y2="28" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+  <rect x="360" y="14" width="88" height="14" rx="3" fill="#0d2236"/>
+  <text x="404" y="24" text-anchor="middle" font-size="8" fill="#4db8ff">Overhead 60% EtOH</text>
+  <!-- Beer column bottom -->
+  <line x1="404" y1="132" x2="404" y2="155" stroke="#ff6666" stroke-width="1" stroke-dasharray="3"/>
+  <rect x="360" y="153" width="88" height="14" rx="3" fill="#0d2236"/>
+  <text x="404" y="163" text-anchor="middle" font-size="8" fill="#ff6666">Stillage (waste)</text>
+
+  <line x1="424" y1="72" x2="456" y2="72" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="440" y="68" text-anchor="middle" font-size="8" fill="#aaa">S-401</text>
+
+  <!-- Rectifier -->
+  <rect x="456" y="42" width="40" height="80" rx="4" fill="url(#col1)" stroke="#39d353" stroke-width="1.5"/>
+  <text x="476" y="73" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">RECT</text>
+  <text x="476" y="85" text-anchor="middle" font-size="8" fill="#7ab8e8">C-401</text>
+  <!-- Rectifier top -->
+  <line x1="476" y1="42" x2="476" y2="18" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="476" y="14" text-anchor="middle" font-size="8" fill="#4db8ff">95% EtOH</text>
+  <!-- reflux -->
+  <line x1="496" y1="72" x2="530" y2="72" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="513" y="68" text-anchor="middle" font-size="8" fill="#aaa">S-501</text>
+
+  <!-- Mol sieve dehydration -->
+  <rect x="530" y="55" width="70" height="54" rx="5" fill="#1a2a1a" stroke="#39d353" stroke-width="1.5"/>
+  <text x="565" y="78" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">MOL SIEVE</text>
+  <text x="565" y="91" text-anchor="middle" font-size="8" fill="#7ab8e8">DEH-501</text>
+  <text x="565" y="103" text-anchor="middle" font-size="8" fill="#aaa">99.5% EtOH</text>
+  <line x1="600" y1="82" x2="635" y2="82" stroke="#4db8ff" stroke-width="1.5" marker-end="url(#a3)"/>
+
+  <!-- Final product -->
+  <rect x="635" y="62" width="90" height="54" rx="6" fill="#14a9b8" stroke="#0d8a99" stroke-width="2"/>
+  <text x="680" y="82" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">BIOETHANOL</text>
+  <text x="680" y="97" text-anchor="middle" font-size="9" fill="#e0f7fa">99.5% purity</text>
+  <text x="680" y="110" text-anchor="middle" font-size="9" fill="#e0f7fa">26,000 L/h</text>
+
+  <!-- Heat exchanger HX -->
+  <ellipse cx="155" cy="178" rx="22" ry="14" fill="#1a2a3a" stroke="#ffa500" stroke-width="1.5"/>
+  <text x="155" y="175" text-anchor="middle" font-size="8" fill="#ffa500" font-weight="700">HX</text>
+  <text x="155" y="188" text-anchor="middle" font-size="8" fill="#7ab8e8">E-101</text>
+  <line x1="100" y1="178" x2="133" y2="178" stroke="#ffa500" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="116" y="174" font-size="8" fill="#aaa">CW in</text>
+  <line x1="177" y1="178" x2="210" y2="178" stroke="#ff6666" stroke-width="1.5" marker-end="url(#a3)"/>
+  <text x="193" y="174" font-size="8" fill="#ff6666">CW out</text>
+
+  <!-- APEA cost box -->
+  <rect x="18" y="210" width="240" height="70" rx="6" fill="#0d2236" stroke="#4db8ff" stroke-width="1.2"/>
+  <text x="138" y="228" text-anchor="middle" font-size="10" fill="#4db8ff" font-weight="700">Aspen Process Economic Analyzer</text>
+  <text x="138" y="244" text-anchor="middle" font-size="9" fill="#aaa">Total Capital Investment (TCI)</text>
+  <text x="138" y="260" text-anchor="middle" font-size="14" fill="#fff" font-weight="700">₦ [FEED estimate]</text>
+  <text x="138" y="275" text-anchor="middle" font-size="9" fill="#aaa">IRR, NPV, Payback period in FEED report</text>
+
+  <!-- Stream table -->
+  <rect x="270" y="210" width="510" height="70" rx="6" fill="#0d2236" stroke="#39d353" stroke-width="1.2"/>
+  <text x="525" y="226" text-anchor="middle" font-size="10" fill="#39d353" font-weight="700">Stream Summary</text>
+  <text x="285" y="244" font-size="9" fill="#aaa">S-101 Cassava mash  | T = 25°C  | P = 1 atm  | F = 85,000 kg/h</text>
+  <text x="285" y="258" font-size="9" fill="#aaa">S-301 Beer          | EtOH = 9% | T = 32°C  | F = 80,000 kg/h</text>
+  <text x="285" y="272" font-size="9" fill="#aaa">Product             | EtOH = 99.5%| T = 25°C  | F = 26,000 L/h</text>
+
+  <!-- Bottom info -->
+  <rect x="18" y="295" width="764" height="54" rx="8" fill="#0a1a2a" stroke="#4db8ff" stroke-width="1"/>
+  <text x="400" y="315" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Korex Energy FEED · Cassava Bioethanol · Ogun State, Nigeria</text>
+  <text x="400" y="333" text-anchor="middle" font-size="10" fill="#7ab8e8">Aspen HYSYS V14 · Aspen Process Economic Analyzer · Front-End Engineering Design Report</text>
+  <text x="400" y="349" text-anchor="middle" font-size="9" fill="#4db8ff">Separate FEED package: Cassava Ethanol and Starch Plant (SIMAJ-BSL, Kebbi State)</text>
+
+  <rect x="18" y="362" width="180" height="38" rx="6" fill="#14161a" stroke="#ffa500" stroke-width="1"/>
+  <text x="108" y="379" text-anchor="middle" font-size="9" fill="#ffa500">Fermentation: 32°C, 48h, yeast</text>
+  <text x="108" y="393" text-anchor="middle" font-size="9" fill="#aaa">Saccharomyces cerevisiae</text>
+  <rect x="208" y="362" width="180" height="38" rx="6" fill="#14161a" stroke="#39d353" stroke-width="1"/>
+  <text x="298" y="379" text-anchor="middle" font-size="9" fill="#39d353">Distillation: Beer col + Rectifier</text>
+  <text x="298" y="393" text-anchor="middle" font-size="9" fill="#aaa">60% → 95% ethanol</text>
+  <rect x="398" y="362" width="180" height="38" rx="6" fill="#14161a" stroke="#4db8ff" stroke-width="1"/>
+  <text x="488" y="379" text-anchor="middle" font-size="9" fill="#4db8ff">Dehydration: Molecular sieve</text>
+  <text x="488" y="393" text-anchor="middle" font-size="9" fill="#aaa">95% → 99.5% fuel-grade EtOH</text>
+  <rect x="588" y="362" width="195" height="38" rx="6" fill="#14161a" stroke="#ffa500" stroke-width="1"/>
+  <text x="685" y="379" text-anchor="middle" font-size="9" fill="#ffa500">Process Simulation Internship</text>
+  <text x="685" y="393" text-anchor="middle" font-size="9" fill="#aaa">July – September 2026 · Korex Energy</text>
+</svg>

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" font-family="system-ui,sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="0.4">
+      <stop offset="0%" stop-color="#1a3a1a"/>
+      <stop offset="100%" stop-color="#2a5a2a"/>
+    </linearGradient>
+    <pattern id="campus" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#2a4a2a"/>
+      <rect x="5" y="5" width="14" height="10" rx="1" fill="#3a5a3a" opacity=".6"/>
+      <rect x="22" y="8" width="12" height="9" rx="1" fill="#3a5a3a" opacity=".4"/>
+      <rect x="2" y="22" width="18" height="12" rx="1" fill="#3a5a3a" opacity=".5"/>
+      <rect x="24" y="24" width="14" height="10" rx="1" fill="#3a5a3a" opacity=".4"/>
+    </pattern>
+  </defs>
+
+  <!-- Satellite-look background -->
+  <rect width="800" height="450" fill="#1a2a1a" rx="8"/>
+
+  <!-- Map area - ABU Zaria campus aerial view style -->
+  <rect x="20" y="60" width="480" height="310" rx="6" fill="url(#campus)" stroke="#39d353" stroke-width="1.5"/>
+
+  <!-- Green zones (trees/parks) -->
+  <ellipse cx="120" cy="140" rx="55" ry="40" fill="#1E5A3F" opacity=".75"/>
+  <ellipse cx="260" cy="200" rx="45" ry="35" fill="#1E5A3F" opacity=".65"/>
+  <ellipse cx="380" cy="130" rx="40" ry="30" fill="#1E5A3F" opacity=".7"/>
+  <ellipse cx="80" cy="280" rx="35" ry="25" fill="#1E5A3F" opacity=".6"/>
+  <ellipse cx="420" cy="290" rx="40" ry="28" fill="#1E5A3F" opacity=".65"/>
+
+  <!-- Buildings -->
+  <rect x="140" y="100" width="60" height="40" rx="3" fill="#3d5030" stroke="#5a7040" stroke-width="1"/>
+  <text x="170" y="124" text-anchor="middle" font-size="7" fill="#c6e8d5">Faculty</text>
+  <rect x="220" y="120" width="70" height="50" rx="3" fill="#3d5030" stroke="#5a7040" stroke-width="1"/>
+  <text x="255" y="148" text-anchor="middle" font-size="7" fill="#c6e8d5">ChE Dept</text>
+  <rect x="310" y="160" width="55" height="38" rx="3" fill="#4a3020" stroke="#7a5030" stroke-width="1"/>
+  <text x="337" y="183" text-anchor="middle" font-size="7" fill="#ffd7b8">Power</text>
+  <!-- Power plant - higher emission marker -->
+  <circle cx="337" cy="165" r="8" fill="none" stroke="#ff6b35" stroke-width="2" stroke-dasharray="3"/>
+  <circle cx="337" cy="165" r="4" fill="#ff6b35" opacity=".7"/>
+  <!-- Smoke plumes from power plant -->
+  <ellipse cx="330" cy="155" rx="5" ry="8" fill="#888" opacity=".35" transform="rotate(-15,330,155)"/>
+  <ellipse cx="340" cy="152" rx="4" ry="7" fill="#888" opacity=".3" transform="rotate(10,340,152)"/>
+
+  <rect x="130" y="220" width="80" height="55" rx="3" fill="#3d5030" stroke="#5a7040" stroke-width="1"/>
+  <text x="170" y="250" text-anchor="middle" font-size="7" fill="#c6e8d5">Library</text>
+  <rect x="350" y="230" width="65" height="44" rx="3" fill="#3d5030" stroke="#5a7040" stroke-width="1"/>
+  <text x="382" y="255" text-anchor="middle" font-size="7" fill="#c6e8d5">Labs</text>
+
+  <!-- Roads -->
+  <rect x="20" y="183" width="480" height="6" fill="#4a4030" opacity=".8"/>
+  <rect x="250" y="60" width="6" height="310" fill="#4a4030" opacity=".8"/>
+
+  <!-- GEE Green Cover overlay -->
+  <rect x="20" y="60" width="480" height="310" rx="6" fill="none" stroke="#39d353" stroke-width="2"/>
+  <text x="30" y="82" font-size="9" fill="#39d353" font-weight="700">Google Earth Engine · Green Cover Analysis</text>
+
+  <!-- Scope markers -->
+  <rect x="30" y="290" width="110" height="40" rx="4" fill="rgba(0,0,0,.6)" stroke="#ff6b35" stroke-width="1.5"/>
+  <text x="85" y="307" text-anchor="middle" font-size="8" fill="#ff6b35" font-weight="700">Scope 1</text>
+  <text x="85" y="321" text-anchor="middle" font-size="8" fill="#aaa">Direct (generators)</text>
+
+  <rect x="155" y="290" width="110" height="40" rx="4" fill="rgba(0,0,0,.6)" stroke="#d4af37" stroke-width="1.5"/>
+  <text x="210" y="307" text-anchor="middle" font-size="8" fill="#d4af37" font-weight="700">Scope 2</text>
+  <text x="210" y="321" text-anchor="middle" font-size="8" fill="#aaa">Indirect (NERC grid)</text>
+
+  <rect x="280" y="290" width="110" height="40" rx="4" fill="rgba(0,0,0,.6)" stroke="#14a9b8" stroke-width="1.5"/>
+  <text x="335" y="307" text-anchor="middle" font-size="8" fill="#14a9b8" font-weight="700">Scope 3</text>
+  <text x="335" y="321" text-anchor="middle" font-size="8" fill="#aaa">Value chain</text>
+
+  <rect x="405" y="290" width="88" height="40" rx="4" fill="rgba(0,0,0,.6)" stroke="#39d353" stroke-width="1.5"/>
+  <text x="449" y="307" text-anchor="middle" font-size="8" fill="#39d353" font-weight="700">Green Cover</text>
+  <text x="449" y="321" text-anchor="middle" font-size="8" fill="#aaa">GEE NDVI</text>
+
+  <!-- Right panel -->
+  <rect x="515" y="60" width="270" height="310" rx="6" fill="#101a10" stroke="#39d353" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="650" y="88" text-anchor="middle" font-size="15" font-weight="700" fill="#39d353" font-family="Georgia,serif">Green Zaria</text>
+  <text x="650" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#39d353" font-family="Georgia,serif">Carbon Audit</text>
+  <text x="650" y="122" text-anchor="middle" font-size="10" fill="#7ab8e8">ABU Zaria Campus</text>
+
+  <!-- GHG Protocol badge -->
+  <rect x="530" y="130" width="240" height="28" rx="5" fill="#1E5A3F"/>
+  <text x="650" y="148" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">GHG Protocol Scopes 1–3</text>
+
+  <!-- Emission bars -->
+  <text x="530" y="180" font-size="9" fill="#aaa">Emission Sources</text>
+  <!-- Bar chart -->
+  <rect x="530" y="188" width="120" height="14" rx="3" fill="#ff6b35"/>
+  <text x="655" y="199" font-size="9" fill="#aaa"> Generators</text>
+  <rect x="530" y="208" width="85" height="14" rx="3" fill="#d4af37"/>
+  <text x="620" y="219" font-size="9" fill="#aaa"> Grid electricity</text>
+  <rect x="530" y="228" width="140" height="14" rx="3" fill="#14a9b8"/>
+  <text x="675" y="239" font-size="9" fill="#aaa"> Transport</text>
+  <rect x="530" y="248" width="60" height="14" rx="3" fill="#39d353"/>
+  <text x="595" y="259" font-size="9" fill="#aaa"> Waste</text>
+
+  <!-- GEE NDVI legend -->
+  <text x="530" y="285" font-size="9" fill="#aaa">NDVI Green Cover</text>
+  <rect x="530" y="292" width="180" height="10" rx="4" fill="url(#ndvi)"/>
+  <defs>
+    <linearGradient id="ndvi" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a3020"/>
+      <stop offset="40%" stop-color="#8a9a30"/>
+      <stop offset="100%" stop-color="#1E5A3F"/>
+    </linearGradient>
+  </defs>
+  <text x="530" y="315" font-size="8" fill="#555">Low</text>
+  <text x="702" y="315" font-size="8" fill="#39d353">Dense</text>
+
+  <!-- Tools -->
+  <text x="530" y="338" font-size="9" fill="#7ab8e8">Tools used:</text>
+  <text x="530" y="352" font-size="9" fill="#aaa">GHG Protocol · Google Earth Engine</text>
+  <text x="530" y="366" font-size="9" fill="#aaa">NDVI analysis · Scope 1–3 accounting</text>
+
+  <!-- Title -->
+  <text x="400" y="398" text-anchor="middle" font-size="12" fill="#1F1A15">.</text>
+
+  <!-- Bottom bar -->
+  <rect x="20" y="385" width="760" height="38" rx="6" fill="#1E5A3F" opacity=".15" stroke="#39d353" stroke-width="1"/>
+  <text x="400" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#39d353">Green Zaria Carbon Audit · Ahmadu Bello University Zaria</text>
+  <text x="400" y="416" text-anchor="middle" font-size="10" fill="#7ab8e8">GHG Protocol Scopes 1–3 · Google Earth Engine NDVI · Campus sustainability initiative</text>
+</svg>

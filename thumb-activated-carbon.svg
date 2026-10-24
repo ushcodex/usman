@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" font-family="system-ui,sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#0f1318"/>
+    </linearGradient>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#14a9b8"/>
+    </marker>
+    <linearGradient id="furnace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#c44a1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg2)" rx="8"/>
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#14a9b8" font-family="Georgia,serif">Potato Peel Waste to Activated Carbon Plant</text>
+  <text x="400" y="56" text-anchor="middle" font-size="12" fill="#8899aa">200 L Capacity · Pyrolysis and Chemical Activation Route</text>
+
+  <!-- Step 1: Potato Peel Input -->
+  <rect x="20" y="85" width="100" height="56" rx="8" fill="#2d3139" stroke="#14a9b8" stroke-width="2"/>
+  <text x="70" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#14a9b8">Potato Peel</text>
+  <text x="70" y="128" text-anchor="middle" font-size="10" fill="#8899aa">Waste input</text>
+  <line x1="120" y1="113" x2="148" y2="113" stroke="#14a9b8" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- Step 2: Drying -->
+  <rect x="148" y="85" width="100" height="56" rx="8" fill="#2d3139" stroke="#d4af37" stroke-width="2"/>
+  <text x="198" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#d4af37">Drying</text>
+  <text x="198" y="128" text-anchor="middle" font-size="10" fill="#8899aa">105°C oven</text>
+  <line x1="248" y1="113" x2="276" y2="113" stroke="#14a9b8" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- Step 3: Pyrolysis Furnace -->
+  <rect x="276" y="75" width="120" height="76" rx="8" fill="url(#furnace)" stroke="#ff6b35" stroke-width="2"/>
+  <text x="336" y="106" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Pyrolysis</text>
+  <text x="336" y="123" text-anchor="middle" font-size="10" fill="#ffe0cc">500–700°C</text>
+  <text x="336" y="140" text-anchor="middle" font-size="10" fill="#ffe0cc">N₂ atmosphere</text>
+  <line x1="396" y1="113" x2="424" y2="113" stroke="#14a9b8" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- CO2 / tar byproduct -->
+  <line x1="336" y1="75" x2="336" y2="48" stroke="#ff6b35" stroke-width="1.5" stroke-dasharray="4"/>
+  <rect x="270" y="28" width="130" height="22" rx="5" fill="#14161a" stroke="#ff6b35" stroke-width="1"/>
+  <text x="335" y="43" text-anchor="middle" font-size="10" fill="#ff8855">Pyrolysis gas / tar byproduct</text>
+
+  <!-- Step 4: Char -->
+  <rect x="424" y="85" width="100" height="56" rx="8" fill="#14161a" stroke="#aaaaaa" stroke-width="2"/>
+  <text x="474" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Char</text>
+  <text x="474" y="128" text-anchor="middle" font-size="10" fill="#8899aa">Carbon skeleton</text>
+  <line x1="524" y1="113" x2="552" y2="113" stroke="#14a9b8" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- KOH activation reagent arrow -->
+  <line x1="602" y1="58" x2="602" y2="86" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#arr2)"/>
+  <rect x="542" y="28" width="120" height="22" rx="5" fill="#14161a" stroke="#d4af37" stroke-width="1"/>
+  <text x="602" y="43" text-anchor="middle" font-size="10" fill="#d4af37">KOH / ZnCl₂ activating agent</text>
+
+  <!-- Step 5: Chemical Activation -->
+  <rect x="552" y="85" width="110" height="56" rx="8" fill="#2d3139" stroke="#d4af37" stroke-width="2"/>
+  <text x="607" y="107" text-anchor="middle" font-size="11" font-weight="700" fill="#d4af37">Chemical</text>
+  <text x="607" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#d4af37">Activation</text>
+  <text x="607" y="136" text-anchor="middle" font-size="10" fill="#8899aa">800°C, 1h</text>
+  <line x1="662" y1="113" x2="690" y2="113" stroke="#14a9b8" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- Step 6: Washing -->
+  <rect x="690" y="85" width="90" height="56" rx="8" fill="#2d3139" stroke="#14a9b8" stroke-width="2"/>
+  <text x="735" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#14a9b8">Washing</text>
+  <text x="735" y="128" text-anchor="middle" font-size="10" fill="#8899aa">HCl, H₂O</text>
+
+  <!-- Arrow down from washing -->
+  <line x1="735" y1="141" x2="735" y2="178" stroke="#14a9b8" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- Step 7 row 2: Drying -->
+  <rect x="622" y="178" width="100" height="56" rx="8" fill="#2d3139" stroke="#d4af37" stroke-width="2"/>
+  <text x="672" y="203" text-anchor="middle" font-size="11" font-weight="700" fill="#d4af37">Final Drying</text>
+  <text x="672" y="221" text-anchor="middle" font-size="10" fill="#8899aa">105°C, 12h</text>
+  <line x1="622" y1="206" x2="594" y2="206" stroke="#14a9b8" stroke-width="2" marker-end="url(#arrl2)"/>
+
+  <!-- Step 8: Activated Carbon -->
+  <rect x="460" y="178" width="128" height="56" rx="8" fill="#14a9b8" stroke="#0d8a99" stroke-width="2"/>
+  <text x="524" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Activated</text>
+  <text x="524" y="217" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Carbon</text>
+  <text x="524" y="230" text-anchor="middle" font-size="9" fill="#e0f7fa">High surface area product</text>
+  <line x1="460" y1="206" x2="432" y2="206" stroke="#14a9b8" stroke-width="2" marker-end="url(#arrl2)"/>
+
+  <!-- Characterization -->
+  <rect x="280" y="178" width="148" height="56" rx="8" fill="#2d3139" stroke="#14a9b8" stroke-width="1.5"/>
+  <text x="354" y="200" text-anchor="middle" font-size="11" font-weight="700" fill="#14a9b8">Characterization</text>
+  <text x="354" y="215" text-anchor="middle" font-size="10" fill="#8899aa">BET surface area, SEM</text>
+  <text x="354" y="228" text-anchor="middle" font-size="10" fill="#8899aa">FTIR, iodine number</text>
+
+  <!-- Arrow left for marker -->
+  <defs>
+    <marker id="arrl2" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+      <path d="M8,0 L8,6 L0,3 z" fill="#14a9b8"/>
+    </marker>
+  </defs>
+
+  <!-- Results -->
+  <rect x="20" y="265" width="760" height="54" rx="10" fill="#2d3139" stroke="#14a9b8" stroke-width="1.5"/>
+  <text x="400" y="289" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Best Project Award · Best Presentation Award · ₦50,000 Prize</text>
+  <text x="400" y="307" text-anchor="middle" font-size="11" fill="#8899aa">Chemical activation with KOH/ZnCl₂ · Pyrolysis at 500–700°C · 200 L batch capacity</text>
+
+  <!-- Metrics -->
+  <rect x="20" y="337" width="180" height="50" rx="8" fill="#14161a" stroke="#14a9b8" stroke-width="1.2"/>
+  <text x="110" y="357" text-anchor="middle" font-size="10" fill="#14a9b8" font-weight="700">Raw Material</text>
+  <text x="110" y="373" text-anchor="middle" font-size="10" fill="#8899aa">Potato peel agricultural waste</text>
+  <rect x="210" y="337" width="180" height="50" rx="8" fill="#14161a" stroke="#d4af37" stroke-width="1.2"/>
+  <text x="300" y="357" text-anchor="middle" font-size="10" fill="#d4af37" font-weight="700">Activation Agent</text>
+  <text x="300" y="373" text-anchor="middle" font-size="10" fill="#8899aa">KOH or ZnCl₂ chemical activation</text>
+  <rect x="400" y="337" width="180" height="50" rx="8" fill="#14161a" stroke="#14a9b8" stroke-width="1.2"/>
+  <text x="490" y="357" text-anchor="middle" font-size="10" fill="#14a9b8" font-weight="700">Applications</text>
+  <text x="490" y="373" text-anchor="middle" font-size="10" fill="#8899aa">Water treatment, gas adsorption</text>
+  <rect x="590" y="337" width="190" height="50" rx="8" fill="#14161a" stroke="#d4af37" stroke-width="1.2"/>
+  <text x="685" y="357" text-anchor="middle" font-size="10" fill="#d4af37" font-weight="700">Zero-Waste Approach</text>
+  <text x="685" y="373" text-anchor="middle" font-size="10" fill="#8899aa">Waste valorization, circular economy</text>
+
+  <text x="400" y="425" text-anchor="middle" font-size="11" fill="#14a9b8" font-weight="700">Chemical Engineering Design · Ahmadu Bello University Zaria</text>
+</svg>

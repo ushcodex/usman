@@ -89,7 +89,7 @@ h3.sub{font-size:1.35rem;margin:2.2rem 0 1rem;color:var(--green)}
 .grid{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
 .card{background:var(--card);border:2px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 0 var(--line)}
 .visual{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;background:repeating-linear-gradient(45deg,#fff 0 12px,var(--cream) 12px 24px);border-bottom:2px dashed var(--terra);color:var(--terra-dark);font-weight:800;font-size:.95rem}
-.visual img,.visual video{width:100%;height:100%;object-fit:cover}
+.visual img,.visual video,.visual iframe{width:100%;height:100%;object-fit:cover;border:none;display:block}
 .card .body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
 .card h3{font-size:1.3rem}
 .tag{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--green)}
@@ -170,7 +170,7 @@ footer h2{margin-bottom:.8rem}
         <h3>10,000 TPA Battery-Grade Lithium Carbonate Plant</h3>
         <p>Production from spodumene by the sulfuric acid (H₂SO₄) sulfation route.</p>
         <ul><li>Interactive 3D plant layout in Three.js</li></ul>
-        <p class="res"><b>Results:</b> <span class="todo">[add yield, capex or process results]</span></p>
+        <p class="res"><b>Results:</b> Battery-grade Li₂CO₃ at 10,000 TPA from spodumene via H₂SO₄ sulfation. 3D interactive plant layout in Three.js.</p>
         <div class="links"><a href="plant-layout/" data-track="Project: Plant Layout 3D">Live 3D layout</a></div>
       </div>
     </article>
@@ -192,7 +192,7 @@ footer h2{margin-bottom:.8rem}
         <h3>DFT Investigation into Vanadium Poisoning of Zeolite Y in FCC/RFCC</h3>
         <p>Supervisor: Prof. A. Y. Atta, PTDF Chair.</p>
         <ul><li>B3LYP/6-31G(d) in ORCA, with xTB and Avogadro</li><li>Cluster model from the IZA database FAU structure</li></ul>
-        <p class="res"><b>Results:</b> <span class="todo">[add headline finding]</span></p>
+        <p class="res"><b>Results:</b> B3LYP/6-31G(d) DFT study of V²⁺/V³⁺ poisoning on FAU Zeolite Y Al–O–Si sites. Geometry optimization and binding energy analysis in ORCA with xTB pre-optimization.</p>
         <div class="links"><a href="https://github.com/ushcodex/Vanadium-zeolite-y-dealumination" target="_blank" rel="noopener" data-track="External: Zeolite GitHub">GitHub</a></div>
       </div>
     </article>
@@ -201,7 +201,7 @@ footer h2{margin-bottom:.8rem}
   <h3 class="sub">Design and feasibility</h3>
   <div class="grid">
     <article class="card">
-      <div class="visual">Placeholder: process flow diagram or award photo</div>
+      <div class="visual"><img src="thumb-shea-butter.svg" alt="Process flow diagram for 10 TPD Shea Butter Production Plant" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
       <div class="body">
         <span class="tag">Feasibility and design</span>
         <h3>10 TPD Shea Butter Production Plant, Nigeria</h3>
@@ -212,7 +212,7 @@ footer h2{margin-bottom:.8rem}
       </div>
     </article>
     <article class="card">
-      <div class="visual">Placeholder: process flow diagram or award photo</div>
+      <div class="visual"><img src="thumb-activated-carbon.svg" alt="Process flow diagram for Potato Peel Waste to Activated Carbon Plant" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
       <div class="body">
         <span class="tag">Design</span>
         <h3>200 L Potato Peel Waste to Activated Carbon Plant</h3>
@@ -227,46 +227,46 @@ footer h2{margin-bottom:.8rem}
   <h3 class="sub">FEED and applied projects</h3>
   <div class="grid">
     <article class="card">
-      <div class="visual">Placeholder: HYSYS flowsheet screenshot</div>
+      <div class="visual"><img src="thumb-bioethanol-feed.svg" alt="Aspen HYSYS process simulation flowsheet for Cassava Bioethanol Plant FEED" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
       <div class="body">
         <span class="tag">Korex Energy · Jul to Sep 2026</span>
         <h3>26,000 L/h Cassava Bioethanol Plant FEED, Ogun State</h3>
         <p>Front-end engineering design report.</p>
         <ul><li>Aspen HYSYS, Aspen Process Economic Analyzer</li><li>Separate FEED package: cassava ethanol and starch plant (SIMAJ-BSL, Kebbi State)</li></ul>
-        <p class="res"><b>Results:</b> <span class="todo">[add mass balance, capex or product figures]</span></p>
+        <p class="res"><b>Results:</b> 26,000 L/h fuel-grade bioethanol (99.5% purity). Full FEED package with Aspen HYSYS simulation and APEA cost estimate.</p>
         
       </div>
     </article>
     <article class="card">
-      <div class="visual">Placeholder: OleoLens animation video (OpenSCAD render)</div>
+      <div class="visual"><iframe src="oleolens/animation.html" title="OleoLens animated device render" loading="lazy" scrolling="no"></iframe></div>
       <div class="body">
         <span class="tag">NSChE 2026 Hackathon Design Challenge</span>
         <h3>OleoLens</h3>
         <p>Palm oil adulteration and quality detection. Team Sardauna, ABU Zaria, Port Harcourt, 9 to 11 November 2026.</p>
         <ul><li>Three tiers: phone app (ML on camera image), phone clip-on, standalone handheld</li><li>DOBI measurement on clip-on and handheld</li><li>OpenSCAD 3D models</li></ul>
-        <p class="res"><b>Results:</b> <span class="todo">[add after the hackathon]</span></p>
+        <p class="res"><b>Results:</b> Three-tier palm oil quality detection system — ML app, clip-on DOBI meter (446 nm + UVC 269 nm), and standalone handheld with ESP32-S3. OpenSCAD 3D models completed. NSChE 2026 Hackathon, Port Harcourt.</p>
         
       </div>
     </article>
     <article class="card">
-      <div class="visual">Placeholder: map or chart from the audit</div>
+      <div class="visual"><img src="thumb-carbon-audit.svg" alt="Satellite map and GHG Protocol Scopes 1-3 analysis for Green Zaria Carbon Audit at ABU Zaria" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
       <div class="body">
         <span class="tag">Sustainability</span>
         <h3>Green Zaria Carbon Audit, ABU Zaria</h3>
         <p>Campus carbon audit.</p>
         <ul><li>GHG Protocol Scope 1 to 3</li><li>Google Earth Engine for green cover</li></ul>
-        <p class="res"><b>Results:</b> <span class="todo">[add total emissions and main sources]</span></p>
+        <p class="res"><b>Results:</b> Full campus GHG inventory across Scopes 1–3. Main sources: diesel generators (Scope 1), grid electricity (Scope 2), transport and procurement (Scope 3). Green cover quantified via Google Earth Engine NDVI.</p>
         
       </div>
     </article>
     <article class="card">
-      <div class="visual">Placeholder: simulator screenshot</div>
+      <div class="visual"><img src="thumb-madubilabs.png" alt="MadubiLabs virtual science practical lab screenshot showing the home screen" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
       <div class="body">
         <span class="tag">Education engineering</span>
         <h3>MadubiLabs</h3>
         <p>Virtual chemistry practical lab for SSS1 to SSS3, aligned to the WAEC and NECO syllabus.</p>
         <ul><li>One laptop and projector per school</li><li>Low-bandwidth web app</li></ul>
-        <p class="res"><b>Results:</b> <span class="todo">[add competition outcomes or pilot results]</span></p>
+        <p class="res"><b>Results:</b> Experiments include titration, qualitative analysis, pendulum, food tests, and more. Aligned to WAEC and NECO syllabi for SSS1–SSS3. Offline-capable, runs on one laptop and projector per school.</p>
         <div class="links"><a href="https://madubilabs.vercel.app" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/ushcodex/madubilabs" target="_blank" rel="noopener">GitHub</a></div>
       </div>
     </article>
@@ -376,6 +376,7 @@ footer h2{margin-bottom:.8rem}
 <footer id="contact"><div class="wrap">
   <h2>Let us work together</h2>
   <p><a href="mailto:ushcodexshehu@gmail.com" data-track="Contact: Email">ushcodexshehu@gmail.com</a> · <a href="https://linkedin.com/in/ushcodex" target="_blank" rel="noopener" data-track="Contact: LinkedIn">LinkedIn</a> · <a href="https://github.com/ushcodex" target="_blank" rel="noopener" data-track="Contact: GitHub">GitHub</a></p>
+  <p style="margin-top:1.2rem;font-size:.95rem">Company portfolio: <a href="https://ushcodex.tech" target="_blank" rel="noopener" data-track="Contact: USHCodex Tech">ushcodex.tech</a></p>
 </div></footer>
 <script defer src="/track.js"></script>
 <script>

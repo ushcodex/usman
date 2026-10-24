@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OleoLens Animation</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#1a1f2e;display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden}
+  .scene{width:560px;height:315px;position:relative;display:flex;align-items:center;justify-content:center;gap:32px}
+  /* Handheld body */
+  .handheld{width:120px;height:220px;background:#2d3139;border-radius:18px 18px 14px 14px;position:relative;box-shadow:0 8px 32px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);border:2px solid #3d4249;flex-shrink:0}
+  .handheld::after{content:'';position:absolute;top:4px;left:4px;right:4px;height:3px;background:rgba(255,255,255,.07);border-radius:99px}
+  /* Display window */
+  .display{position:absolute;top:18px;left:12px;right:12px;height:90px;background:#0a1520;border-radius:6px;overflow:hidden;border:1px solid #14a9b8;box-shadow:0 0 12px rgba(20,169,184,.3)}
+  .display-screen{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-family:monospace;font-size:9px}
+  .reading{font-size:16px;font-weight:700;color:#14a9b8;line-height:1;animation:pulse 2.4s ease-in-out infinite}
+  .reading-label{font-size:7px;color:#7ab8e8;letter-spacing:.08em;text-transform:uppercase}
+  .bar-row{display:flex;gap:2px;align-items:flex-end;height:24px}
+  .bar{width:6px;background:#14a9b8;border-radius:2px 2px 0 0;animation:barGrow 2.4s ease-in-out infinite}
+  .bar:nth-child(2){animation-delay:.15s;background:#d4af37}
+  .bar:nth-child(3){animation-delay:.3s;background:#14a9b8}
+  .bar:nth-child(4){animation-delay:.45s;background:#39d353}
+  .bar:nth-child(5){animation-delay:.6s;background:#14a9b8}
+  @keyframes barGrow{0%,100%{height:4px;opacity:.4}50%{height:22px;opacity:1}}
+  @keyframes pulse{0%,100%{color:#14a9b8;text-shadow:0 0 8px rgba(20,169,184,.4)}50%{color:#7ae8f0;text-shadow:0 0 16px rgba(20,169,184,.8)}}
+  /* Optical hump */
+  .optic-hump{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:70px;background:#23262d;border-radius:12px 12px 14px 14px;border:2px solid #3d4249;border-top:2px solid #14a9b8;display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:10px}
+  /* LED ring */
+  .led-ring{width:28px;height:28px;border-radius:50%;border:3px solid #14a9b8;position:relative;animation:ledPulse 2.4s ease-in-out infinite}
+  .led-ring::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:#14a9b8;animation:ledCore 2.4s ease-in-out infinite}
+  @keyframes ledPulse{0%,100%{box-shadow:0 0 0 0 rgba(20,169,184,0),0 0 4px rgba(20,169,184,.3);border-color:#14a9b8}50%{box-shadow:0 0 0 6px rgba(20,169,184,.15),0 0 12px rgba(20,169,184,.5);border-color:#7ae8f0}}
+  @keyframes ledCore{0%,100%{background:#14a9b8;box-shadow:0 0 4px rgba(20,169,184,.4)}50%{background:#7ae8f0;box-shadow:0 0 12px rgba(20,169,184,.8)}}
+  /* UVC LED */
+  .uvc{width:8px;height:8px;border-radius:50%;background:#8844ff;animation:uvcFlash 2.4s ease-in-out infinite;box-shadow:0 0 6px rgba(136,68,255,.6)}
+  @keyframes uvcFlash{0%,40%,100%{opacity:.3}50%,90%{opacity:1;box-shadow:0 0 12px rgba(136,68,255,.9)}}
+  /* Sample tray -->
+  .tray{position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:50px;height:8px;background:#3d4249;border-radius:0 0 8px 8px;border:1px solid #14a9b8}
+  /* Tray sliding animation */
+  .tray-slide{animation:traySlide 4.8s ease-in-out infinite}
+  @keyframes traySlide{0%,40%,100%{transform:translateX(-50%) translateY(0)}50%,90%{transform:translateX(-50%) translateY(14px)}}
+  /* Power button */
+  .power-btn{position:absolute;top:115px;right:-4px;width:8px;height:22px;background:#3d4249;border-radius:0 4px 4px 0;border:1px solid #4d5259}
+  /* Status bar -->
+  .status-bar{position:absolute;top:115px;right:8px;width:4px;height:22px;border-radius:2px;overflow:hidden;background:#0a1520}
+  .status-fill{width:100%;background:linear-gradient(to bottom,#39d353,#14a9b8);animation:statusPulse 2.4s ease-in-out infinite}
+  @keyframes statusPulse{0%,100%{height:30%}50%{height:100%}}
+
+  /* Clip-on body -->
+  .clipon{width:72px;height:56px;background:#2d3139;border-radius:8px;position:relative;border:2px solid #14a9b8;box-shadow:0 4px 16px rgba(0,0,0,.5);flex-shrink:0}
+  .clipon-label{position:absolute;top:4px;left:0;right:0;text-align:center;font-family:monospace;font-size:7px;color:#14a9b8;font-weight:700;letter-spacing:.06em}
+  .clipon-lens{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:24px;height:24px;border-radius:50%;border:2px solid #14a9b8;background:#0a1520;box-shadow:0 0 8px rgba(20,169,184,.4);animation:ledPulse 2s ease-in-out infinite 0.3s}
+  .clip-arm{position:absolute;top:-14px;left:8px;right:8px;height:14px;background:#2d3139;border-radius:4px 4px 0 0;border:2px solid #3d4249;border-bottom:none}
+
+  /* Info panel -->
+  .info-panel{display:flex;flex-direction:column;gap:8px;flex:1;max-width:180px}
+  .info-title{font-family:Georgia,serif;font-size:18px;font-weight:700;color:#14a9b8;line-height:1.1}
+  .info-sub{font-size:10px;color:#7ab8e8;line-height:1.5}
+  .tier-row{display:flex;align-items:center;gap:6px;font-size:9px;color:#8899aa;font-family:monospace}
+  .tier-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .tier1{background:#14a9b8}
+  .tier2{background:#d4af37}
+  .tier3{background:#8844ff}
+  .spectrum-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;margin-top:4px;width:100%}
+  .spec-seg{flex:1;animation:specAnim 2.4s ease-in-out infinite}
+  .spec1{background:#8844ff;animation-delay:0s}
+  .spec2{background:#4466ff;animation-delay:.2s}
+  .spec3{background:#14a9b8;animation-delay:.4s}
+  .spec4{background:#39d353;animation-delay:.6s}
+  .spec5{background:#d4af37;animation-delay:.8s}
+  .spec6{background:#ff6b35;animation-delay:1s}
+  @keyframes specAnim{0%,100%{opacity:.4}50%{opacity:1}}
+  .dobi-reading{background:#0a1520;border:1px solid #14a9b8;border-radius:6px;padding:6px 8px;font-family:monospace;font-size:9px;color:#7ab8e8}
+  .dobi-val{font-size:18px;font-weight:700;color:#39d353;animation:pulse 2.4s ease-in-out infinite}
+
+  /* Beam animation -->
+  .beam{position:absolute;bottom:70px;left:60px;width:3px;height:40px;background:linear-gradient(to bottom, rgba(136,68,255,.8), rgba(20,169,184,.6));border-radius:2px;animation:beamScan 2.4s ease-in-out infinite;transform-origin:top center;box-shadow:0 0 8px rgba(136,68,255,.5)}
+  @keyframes beamScan{0%,100%{opacity:0.3;height:30px}50%{opacity:0.9;height:48px}}
+
+  /* Background particles -->
+  .scene-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:12px}
+  .particle{position:absolute;width:2px;height:2px;border-radius:50%;background:#14a9b8;animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0) scale(1);opacity:.3}50%{transform:translateY(-20px) scale(1.5);opacity:.7}}
+
+  /* container */
+  .card-outer{background:#1a1f2e;border-radius:12px;padding:24px;width:560px;height:315px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;border:1px solid #2d3a4a}
+</style>
+</head>
+<body>
+<div class="card-outer">
+  <div class="scene-bg" id="bg"></div>
+  <div class="scene">
+    <!-- Info panel left -->
+    <div class="info-panel">
+      <div class="info-title">OleoLens</div>
+      <div class="info-sub">Palm oil adulteration &amp;<br>quality detection device</div>
+      <div class="tier-row"><span class="tier-dot tier1"></span>Phone app (ML camera)</div>
+      <div class="tier-row"><span class="tier-dot tier2"></span>Phone clip-on (DOBI)</div>
+      <div class="tier-row"><span class="tier-dot tier3"></span>Handheld standalone</div>
+      <div>
+        <div style="font-size:8px;color:#555;font-family:monospace;margin-bottom:3px">SPECTRAL SCAN</div>
+        <div class="spectrum-bar">
+          <div class="spec-seg spec1"></div>
+          <div class="spec-seg spec2"></div>
+          <div class="spec-seg spec3"></div>
+          <div class="spec-seg spec4"></div>
+          <div class="spec-seg spec5"></div>
+          <div class="spec-seg spec6"></div>
+        </div>
+      </div>
+      <div class="dobi-reading">
+        <div style="font-size:7px;color:#555;margin-bottom:2px">DOBI READING</div>
+        <div class="dobi-val" id="dobiVal">2.31</div>
+        <div style="font-size:7px;color:#39d353;margin-top:1px">PASS — Good quality palm oil</div>
+      </div>
+      <div style="font-size:7px;color:#555;font-family:monospace;margin-top:2px">NSChE 2026 Hackathon · Team Sardauna</div>
+    </div>
+
+    <!-- Handheld device center -->
+    <div class="handheld">
+      <div class="display">
+        <div class="display-screen">
+          <div class="reading" id="purityVal">94.2%</div>
+          <div class="reading-label">Oil Purity</div>
+          <div class="bar-row">
+            <div class="bar" style="height:18px"></div>
+            <div class="bar" style="height:12px"></div>
+            <div class="bar" style="height:20px"></div>
+            <div class="bar" style="height:8px"></div>
+            <div class="bar" style="height:15px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="optic-hump">
+        <div class="led-ring"></div>
+        <div class="uvc"></div>
+        <div class="tray tray-slide"></div>
+      </div>
+      <div class="power-btn"></div>
+      <div class="status-bar"><div class="status-fill"></div></div>
+      <div class="beam"></div>
+    </div>
+
+    <!-- Clip-on right -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;flex-shrink:0">
+      <div class="clipon">
+        <div class="clip-arm"></div>
+        <div class="clipon-label">CLIP-ON</div>
+        <div class="clipon-lens"></div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:8px;color:#14a9b8;font-family:monospace;font-weight:700">TIER 2</div>
+        <div style="font-size:7px;color:#555;font-family:monospace">446nm + UVC 269nm</div>
+        <div style="font-size:7px;color:#555;font-family:monospace">DOBI colorimetry</div>
+      </div>
+      <div style="font-size:8px;color:#2d3139;font-family:monospace;background:#14a9b8;padding:3px 8px;border-radius:4px;font-weight:700">OpenSCAD 3D</div>
+    </div>
+  </div>
+</div>
+<script>
+  // Animate floating particles
+  const bg = document.getElementById('bg');
+  for(let i=0;i<18;i++){
+    const p = document.createElement('div');
+    p.className='particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.top=Math.random()*100+'%';
+    p.style.animationDelay=Math.random()*6+'s';
+    p.style.animationDuration=(4+Math.random()*4)+'s';
+    p.style.opacity=Math.random()*0.5;
+    bg.appendChild(p);
+  }
+  // Animate DOBI reading
+  const dobiVals=['2.31','2.28','2.35','1.89','2.42','2.19'];
+  const purityVals=['94.2%','91.8%','96.1%','88.4%','95.7%','93.3%'];
+  let idx=0;
+  setInterval(()=>{
+    idx=(idx+1)%dobiVals.length;
+    document.getElementById('dobiVal').textContent=dobiVals[idx];
+    document.getElementById('purityVal').textContent=purityVals[idx];
+  },3000);
+</script>
+</body>
+</html>

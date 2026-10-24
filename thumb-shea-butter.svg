@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" font-family="system-ui,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBF5EA"/>
+      <stop offset="100%" stop-color="#F3E7D2"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#B23F16"/>
+    </marker>
+    <marker id="arrl" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto">
+      <path d="M8,0 L8,6 L0,3 z" fill="#B23F16"/>
+    </marker>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)" rx="8"/>
+  <text x="400" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#8F3010" font-family="Georgia,serif">10 TPD Shea Butter Production Plant</text>
+  <text x="400" y="58" text-anchor="middle" font-size="12" fill="#4A4137">Mechanical Solvent-Free Extraction · Feasibility and Design</text>
+  <!-- Row 1 boxes -->
+  <rect x="30" y="80" width="110" height="58" rx="10" fill="#B23F16"/>
+  <text x="85" y="107" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Shea Nuts</text>
+  <text x="85" y="125" text-anchor="middle" font-size="10" fill="#FFD7B8">Raw material</text>
+  <line x1="140" y1="109" x2="168" y2="109" stroke="#B23F16" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="168" y="80" width="110" height="58" rx="10" fill="#1E5A3F"/>
+  <text x="223" y="107" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Washing</text>
+  <text x="223" y="125" text-anchor="middle" font-size="10" fill="#c6e8d5">and Sorting</text>
+  <line x1="278" y1="109" x2="306" y2="109" stroke="#B23F16" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="306" y="80" width="110" height="58" rx="10" fill="#B23F16"/>
+  <text x="361" y="107" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Roasting</text>
+  <text x="361" y="125" text-anchor="middle" font-size="10" fill="#FFD7B8">Drum roaster</text>
+  <line x1="416" y1="109" x2="444" y2="109" stroke="#B23F16" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="444" y="80" width="110" height="58" rx="10" fill="#1E5A3F"/>
+  <text x="499" y="107" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Grinding</text>
+  <text x="499" y="125" text-anchor="middle" font-size="10" fill="#c6e8d5">Mill</text>
+  <line x1="554" y1="109" x2="582" y2="109" stroke="#B23F16" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="582" y="80" width="110" height="58" rx="10" fill="#B23F16"/>
+  <text x="637" y="101" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Kneading</text>
+  <text x="637" y="118" text-anchor="middle" font-size="10" fill="#FFD7B8">warm water</text>
+  <text x="637" y="133" text-anchor="middle" font-size="10" fill="#FFD7B8">added</text>
+  <!-- Vertical down -->
+  <line x1="637" y1="138" x2="637" y2="175" stroke="#B23F16" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Row 2 boxes (right to left) -->
+  <rect x="582" y="175" width="110" height="58" rx="10" fill="#1E5A3F"/>
+  <text x="637" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Separation</text>
+  <text x="637" y="218" text-anchor="middle" font-size="10" fill="#c6e8d5">Oil floats up</text>
+  <line x1="582" y1="204" x2="554" y2="204" stroke="#B23F16" stroke-width="2" marker-end="url(#arrl)"/>
+  <rect x="444" y="175" width="110" height="58" rx="10" fill="#B23F16"/>
+  <text x="499" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Churning</text>
+  <text x="499" y="218" text-anchor="middle" font-size="10" fill="#FFD7B8">Cream churner</text>
+  <line x1="444" y1="204" x2="416" y2="204" stroke="#B23F16" stroke-width="2" marker-end="url(#arrl)"/>
+  <rect x="306" y="175" width="110" height="58" rx="10" fill="#1E5A3F"/>
+  <text x="361" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Boiling</text>
+  <text x="361" y="218" text-anchor="middle" font-size="10" fill="#c6e8d5">Dehydration</text>
+  <line x1="306" y1="204" x2="278" y2="204" stroke="#B23F16" stroke-width="2" marker-end="url(#arrl)"/>
+  <rect x="168" y="175" width="110" height="58" rx="10" fill="#B23F16"/>
+  <text x="223" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Filtering</text>
+  <text x="223" y="218" text-anchor="middle" font-size="10" fill="#FFD7B8">Remove solids</text>
+  <line x1="168" y1="204" x2="140" y2="204" stroke="#B23F16" stroke-width="2" marker-end="url(#arrl)"/>
+  <rect x="30" y="175" width="110" height="58" rx="10" fill="#1E5A3F"/>
+  <text x="85" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Packaging</text>
+  <text x="85" y="218" text-anchor="middle" font-size="10" fill="#c6e8d5">Finished product</text>
+  <!-- Award banner -->
+  <rect x="30" y="270" width="740" height="54" rx="10" fill="#fff" stroke="#E3D5BC" stroke-width="2"/>
+  <text x="400" y="294" text-anchor="middle" font-size="13" font-weight="700" fill="#1F1A15">Best Project Award — Selected for ICERFE Presentation</text>
+  <text x="400" y="312" text-anchor="middle" font-size="11" fill="#4A4137">Feasibility analysis · Mechanical extraction · 10 TPD · Solvent-free route · ABU Zaria</text>
+  <!-- Quality checks bar -->
+  <rect x="30" y="342" width="175" height="44" rx="8" fill="#B23F16" opacity="0.1" stroke="#B23F16" stroke-width="1.5"/>
+  <text x="118" y="360" text-anchor="middle" font-size="10" fill="#8F3010" font-weight="700">FFA Analysis</text>
+  <text x="118" y="377" text-anchor="middle" font-size="10" fill="#4A4137">Peroxide value testing</text>
+  <rect x="215" y="342" width="175" height="44" rx="8" fill="#1E5A3F" opacity="0.1" stroke="#1E5A3F" stroke-width="1.5"/>
+  <text x="303" y="360" text-anchor="middle" font-size="10" fill="#1E5A3F" font-weight="700">Iodine Value</text>
+  <text x="303" y="377" text-anchor="middle" font-size="10" fill="#4A4137">Oil quality metrics</text>
+  <rect x="400" y="342" width="175" height="44" rx="8" fill="#B23F16" opacity="0.1" stroke="#B23F16" stroke-width="1.5"/>
+  <text x="488" y="360" text-anchor="middle" font-size="10" fill="#8F3010" font-weight="700">Refractive Index</text>
+  <text x="488" y="377" text-anchor="middle" font-size="10" fill="#4A4137">Purity verification</text>
+  <rect x="585" y="342" width="185" height="44" rx="8" fill="#1E5A3F" opacity="0.1" stroke="#1E5A3F" stroke-width="1.5"/>
+  <text x="678" y="360" text-anchor="middle" font-size="10" fill="#1E5A3F" font-weight="700">Solvent-Free Route</text>
+  <text x="678" y="377" text-anchor="middle" font-size="10" fill="#4A4137">No chemical solvents</text>
+  <text x="400" y="425" text-anchor="middle" font-size="11" fill="#B23F16" font-weight="700">Chemical Engineering Design · Ahmadu Bello University Zaria</text>
+</svg>
