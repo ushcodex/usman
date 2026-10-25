@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Usman Shehu Ahmad — CV</title>
+<meta name="robots" content="noindex">
+<style>
+/* ─── Screen preview (before printing) ─── */
+:root {
+  --ink: #111;
+  --muted: #444;
+  --accent: #B23F16;
+  --line: #d4d0cb;
+  --bg: #f5f0ea;
+  --card: #ffffff;
+  --green: #1E5A3F;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:11pt;line-height:1.5;color:var(--ink);font-family:"Calibri","Arial",sans-serif;background:var(--bg)}
+
+body{padding:1.5rem;max-width:900px;margin:0 auto}
+
+.print-bar{
+  background:var(--accent);color:#fff;
+  border-radius:10px;padding:.9rem 1.4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.5rem;gap:1rem;flex-wrap:wrap;
+}
+.print-bar p{font-size:.9rem;line-height:1.4;flex:1;min-width:180px}
+.print-btn{
+  background:#fff;color:var(--accent);
+  border:none;border-radius:8px;padding:.65rem 1.4rem;
+  font-size:.95rem;font-weight:700;cursor:pointer;
+  white-space:nowrap;transition:opacity .15s
+}
+.print-btn:hover{opacity:.85}
+
+/* ─── CV Paper ─── */
+.cv{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:2.4rem 2.8rem;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+
+/* Name block */
+.cv-name{font-size:22pt;font-weight:700;letter-spacing:-.01em;color:var(--ink);line-height:1}
+.cv-title{font-size:12pt;color:var(--accent);font-weight:600;margin:.25rem 0 .6rem}
+.cv-contact{
+  display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;
+  font-size:9.5pt;color:var(--muted);border-bottom:2px solid var(--accent);
+  padding-bottom:.7rem;margin-bottom:.9rem;
+}
+.cv-contact a{color:var(--muted);text-decoration:none}
+
+/* Section */
+.cv-section{margin-top:.9rem;page-break-inside:avoid}
+.cv-section-title{
+  font-size:10pt;font-weight:700;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--accent);
+  border-bottom:1.5px solid var(--line);
+  padding-bottom:.15rem;margin-bottom:.5rem;
+}
+
+/* Entry */
+.entry{margin-bottom:.55rem}
+.entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.entry-title{font-weight:700;font-size:10.5pt}
+.entry-date{font-size:9pt;color:var(--muted);white-space:nowrap;flex-shrink:0}
+.entry-sub{font-size:9.5pt;color:var(--muted);font-style:italic;margin-bottom:.2rem}
+.entry-body{font-size:9.5pt;color:var(--ink)}
+
+ul.bul{padding-left:1.1rem;margin:.2rem 0}
+ul.bul li{margin:.1rem 0;font-size:9.5pt}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:.25rem .8rem;
+  font-size:9.5pt;
+}
+.skill-row b{font-weight:700}
+.skill-row{display:flex;gap:.3rem;align-items:baseline}
+
+/* ─── Print styles ─── */
+@media print{
+  @page{margin:1.6cm 1.8cm;size:A4}
+  html{font-size:10pt;background:#fff}
+  body{padding:0;max-width:none;margin:0}
+  .print-bar{display:none!important}
+  .cv{border:none;border-radius:0;box-shadow:none;padding:0}
+  a{color:var(--ink)!important;text-decoration:none!important}
+  .cv-contact a{color:var(--muted)!important}
+  .entry{page-break-inside:avoid}
+  .cv-section{page-break-inside:avoid}
+  .cv-name{font-size:20pt}
+}
+</style>
+</head>
+<body>
+
+<!-- On-screen print bar (hidden when printing) -->
+<div class="print-bar" id="printBar">
+  <p>
+    <strong>ATS-Optimised CV</strong> — Use your browser's print dialog
+    to save as PDF. Set margins to <em>Default</em> or <em>None</em>.
+  </p>
+  <button class="print-btn" onclick="window.print()">⬇ Save as PDF</button>
+</div>
+
+<!-- ── CV body ── -->
+<div class="cv" id="cv">
+
+  <!-- Header -->
+  <div class="cv-name">Usman Shehu Ahmad</div>
+  <div class="cv-title">Chemical Engineer · Process Design · Applied AI</div>
+  <div class="cv-contact">
+    <span>ushcodexshehu@gmail.com</span>
+    <span>linkedin.com/in/ushcodex</span>
+    <span>github.com/ushcodex</span>
+    <span>usman.engineer</span>
+    <span>Nigeria</span>
+  </div>
+
+  <!-- Summary -->
+  <div class="cv-section">
+    <div class="cv-section-title">Professional Summary</div>
+    <div class="entry-body">
+      Final-year Chemical Engineering student at Ahmadu Bello University Zaria specialising in
+      plant design, process simulation and applied machine learning. Designed a 10,000 TPA
+      battery-grade lithium carbonate plant from spodumene. Published first-author SPE paper
+      (SPE-235017-MS) on edge-compute AI surveillance for ESP fault detection, achieving an
+      AUC-ROC of 0.9585. Delivered two FEED packages for bioethanol plants at Korex Energy.
+      President, SPE ABU Zaria Student Chapter 2025/26, growing membership from 53 to 740+.
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="cv-section">
+    <div class="cv-section-title">Education</div>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">B.Eng. Chemical Engineering</span>
+        <span class="entry-date">2021 – 2026 (expected)</span>
+      </div>
+      <div class="entry-sub">Ahmadu Bello University (ABU) Zaria, Nigeria</div>
+      <ul class="bul">
+        <li>Thesis: DFT Investigation into Vanadium Poisoning of Zeolite Y in FCC/RFCC (Supervisor: Prof. A. Y. Atta, PTDF Chair)</li>
+        <li>Federal Scholarship Board (FSB) scholar</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="cv-section">
+    <div class="cv-section-title">Industry Experience</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Process Engineering Intern</span>
+        <span class="entry-date">July – September 2026</span>
+      </div>
+      <div class="entry-sub">Korex Energy, Nigeria</div>
+      <ul class="bul">
+        <li>Led FEED for a 26,000 L/h cassava bioethanol plant in Ogun State using Aspen HYSYS and Aspen Process Economic Analyzer</li>
+        <li>Delivered a separate FEED package for a cassava ethanol and starch plant in Kebbi State (SIMAJ-BSL)</li>
+        <li>Produced mass balance, energy balance, process flow diagrams, equipment sizing and capital cost estimates</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Industrial Trainee (SIWES)</span>
+        <span class="entry-date">June – November 2025 · 6 months</span>
+      </div>
+      <div class="entry-sub">Ilera Agro Processing, Achalawa Plant, Nigeria</div>
+      <ul class="bul">
+        <li>Quality Control lab: FFA, peroxide value, iodine value, refractive index, boiling point, oil content and seed quality tests on the full production line</li>
+        <li>Quality Assurance: tested raw materials for impurities, oil content and adulteration; inspected tankers and packaging</li>
+        <li>Solvent extraction plant operations: safety, extraction, solvent recovery, flakers, expanders, extractors and expellers</li>
+        <li>Refinery operations: neutralisation, gumming and bleaching of shea, soya and palm oil</li>
+        <li>Cosmetic science lab: formulation and QC of creams, lotions, soaps and detergents</li>
+        <li>Authored a 45,000-word technical training report</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="cv-section">
+    <div class="cv-section-title">Key Projects</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">10,000 TPA Battery-Grade Lithium Carbonate Plant Design</span>
+        <span class="entry-date">2026</span>
+      </div>
+      <div class="entry-sub">Final-year design project · ABU Zaria</div>
+      <ul class="bul">
+        <li>Full plant design for the H₂SO₄ sulfation route from spodumene to battery-grade Li₂CO₃</li>
+        <li>Built interactive 3D plant layout using Three.js; published at usman.engineer/plant-layout</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Edge-Compute AI Surveillance for ESP Fault Detection</span>
+        <span class="entry-date">2026</span>
+      </div>
+      <div class="entry-sub">Published research · Paper SPE-235017-MS</div>
+      <ul class="bul">
+        <li>Designed and implemented an Isolation Forest anomaly detection system for electrical submersible pumps</li>
+        <li>Validated on the ESPset real offshore vibration dataset; AUC-ROC 0.9585, F1-score 0.921</li>
+        <li>Presented at STSE 2026 (Paper ID 89) and NAICE 2026 (Paper ID 601), Lagos, August 2026</li>
+        <li>Published as SPE-235017-MS; FEED-grade cost estimate included</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">DFT Investigation: Vanadium Poisoning of Zeolite Y in FCC/RFCC</span>
+        <span class="entry-date">2026</span>
+      </div>
+      <div class="entry-sub">B.Eng. Thesis · ABU Zaria</div>
+      <ul class="bul">
+        <li>B3LYP/6-31G(d) DFT study of V²⁺/V³⁺ poisoning on FAU Zeolite Y Al–O–Si sites using ORCA with xTB pre-optimisation</li>
+        <li>Cluster model constructed from IZA database FAU structure in Avogadro</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">OleoLens — Palm Oil Adulteration and Quality Detection System</span>
+        <span class="entry-date">November 2026</span>
+      </div>
+      <div class="entry-sub">NSChE 2026 Hackathon Design Challenge · Team Sardauna · Port Harcourt</div>
+      <ul class="bul">
+        <li>Three-tier detection system: ML phone app (camera image), DOBI clip-on (446 nm + UVC 269 nm), standalone ESP32-S3 handheld</li>
+        <li>Full OpenSCAD 3D mechanical models for clip-on and handheld enclosures</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">10 TPD Shea Butter Production Plant — Best Project Award</span>
+        <span class="entry-date">2024</span>
+      </div>
+      <div class="entry-sub">Feasibility study and plant design · ABU Zaria</div>
+      <ul class="bul">
+        <li>Mechanical (solvent-free) extraction route; feasibility analysis and full plant design</li>
+        <li>Best Project Award; selected for presentation at ICERFE</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">200 L Potato Peel Waste to Activated Carbon Plant</span>
+        <span class="entry-date">2023</span>
+      </div>
+      <ul class="bul">
+        <li>Pyrolysis and KOH/ZnCl₂ chemical activation route; waste valorisation circular economy approach</li>
+        <li>Best Project Award, Best Presentation Award, ₦50,000 prize</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">MadubiLabs — Virtual Chemistry Practical Lab</span>
+        <span class="entry-date">2025–2026</span>
+      </div>
+      <ul class="bul">
+        <li>Offline-capable web app for WAEC/NECO SSS1–SSS3 practical preparation; titration, qualitative analysis, pendulum, food tests</li>
+        <li>Designed for one laptop and projector per school; live at madubilabs.vercel.app</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Green Zaria Carbon Audit, ABU Zaria</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <ul class="bul">
+        <li>Full campus GHG inventory following the GHG Protocol Scopes 1–3; main sources: diesel generators, grid electricity, transport</li>
+        <li>Green cover quantified via Google Earth Engine NDVI analysis</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Leadership -->
+  <div class="cv-section">
+    <div class="cv-section-title">Leadership and Societies</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">President, SPE ABU Zaria Student Chapter #6350</span>
+        <span class="entry-date">2025 – 2026</span>
+      </div>
+      <div class="entry-sub">Previously: Membership Chair (2023/24), Vice President (2024/25)</div>
+      <ul class="bul">
+        <li>Grew chapter from 53 to 740+ members and raised ₦1.8 million for programmes and logistics</li>
+        <li>IRT 2.0: trained 87 students and produced 14 papers; 4 accepted at STSE, 3 at NAICE</li>
+        <li>Student Technical Software Bootcamp 2.0: trained 61 students in Excel, Python and Aspen HYSYS</li>
+        <li>Won SPE Africa Regional Outstanding Student Chapter award in 2025 and 2026</li>
+        <li>Secured OnePetro grant giving ABU access to 1.3 million technical papers</li>
+        <li>Led 14-person delegation to STSE 2026, Warri; ran 5th Anniversary Energy Week and 2025 Climate Conference (700+ attendees)</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Senate President, NSChE ABU Zaria — 4th Parliament</span>
+        <span class="entry-date">Elected February 2026</span>
+      </div>
+      <ul class="bul">
+        <li>Previously: IELCom member (2021), Public Relations Officer (2022–23), Financial Secretary (2024)</li>
+        <li>First place, NSChE 2026 Departmental Debate Competition</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Core Team Member, Creative Tech Focus Area — UCAF Nigeria</span>
+        <span class="entry-date">Ongoing</span>
+      </div>
+      <ul class="bul">
+        <li>Innovation bootcamps reached 230+ students directly and 1,300+ indirectly</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Publications -->
+  <div class="cv-section">
+    <div class="cv-section-title">Publications and Presentations</div>
+    <ul class="bul">
+      <li>
+        <strong>Ahmad U.S.</strong>, et al. "Edge-Compute AI Surveillance for ESP Fault Detection."
+        <em>SPE Nigeria Annual International Conference and Exhibition</em>, Lagos, August 2026.
+        DOI: 10.2118/235017-MS
+      </li>
+      <li>Presented at STSE 2026, Warri, March 2026 (Paper ID 89)</li>
+      <li>Presented at NAICE 2026, Lagos, August 2026 (Paper ID 601)</li>
+    </ul>
+  </div>
+
+  <!-- Skills -->
+  <div class="cv-section">
+    <div class="cv-section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-row"><b>Process simulation:</b>&nbsp;Aspen HYSYS, Aspen Plus</div>
+      <div class="skill-row"><b>Cost estimation:</b>&nbsp;Aspen Process Economic Analyzer</div>
+      <div class="skill-row"><b>Computational chemistry:</b>&nbsp;ORCA, xTB, Avogadro (DFT)</div>
+      <div class="skill-row"><b>Programming:</b>&nbsp;Python, JavaScript, Three.js, OpenSCAD</div>
+      <div class="skill-row"><b>Machine learning:</b>&nbsp;Isolation Forest, scikit-learn, Excel</div>
+      <div class="skill-row"><b>Plant QC:</b>&nbsp;FFA, PV, IV, refractive index, solvent extraction</div>
+      <div class="skill-row"><b>Carbon accounting:</b>&nbsp;GHG Protocol Scopes 1–3, Google Earth Engine</div>
+      <div class="skill-row"><b>3D design:</b>&nbsp;OpenSCAD, Three.js plant layouts</div>
+    </div>
+  </div>
+
+  <!-- Conferences -->
+  <div class="cv-section">
+    <div class="cv-section-title">Conferences and Training</div>
+    <ul class="bul">
+      <li>NAICE 2026 — SPE Nigeria Annual International Conference, Lagos (presenter)</li>
+      <li>STSE 2026 — Student Technical Symposium and Exhibition, Warri (presenter and delegation lead)</li>
+      <li>SAASC 2025 — SPE Africa Annual Student Congress, Bayero University Kano (delegate)</li>
+      <li>NOG Energy Week 2026 — Nigerian Oil and Gas Week (attendee)</li>
+      <li>EAGx Nigeria 2025 — Effective Altruism Global conference (attendee)</li>
+      <li>PTDF Computational Catalysis Workshop, ABU Zaria, 1–4 June 2026 (12 sessions)</li>
+      <li>ProMolSim Program, 23 Sep – 5 Oct 2024 — Molecular modelling and process simulation, Pencil Team Initiative / Wavefunction Inc.</li>
+      <li>SPE Live CE: AI/ML and quantum computing; automation of drilling systems (December 2025, 0.05 CEU each)</li>
+      <li>SPENC Ethics and Compliance, 24–25 July 2026 (2 CEU)</li>
+      <li>HSE Fire Safety and Emergency Response — Federal Fire Service, Zaria, 28 June 2024</li>
+      <li>OGTAN-TIDE — Tech-Innovation Driven Entrepreneurship, Oil and Gas Trainers' Association of Nigeria, 6 July 2026</li>
+      <li>Jobberman Soft Skills (with Mastercard Foundation), May 2025</li>
+    </ul>
+  </div>
+
+  <!-- Awards -->
+  <div class="cv-section">
+    <div class="cv-section-title">Awards and Scholarships</div>
+    <ul class="bul">
+      <li>Federal Scholarship Board (FSB) Scholarship — full undergraduate award</li>
+      <li>SPE Africa Regional Outstanding Student Chapter Award — 2025 and 2026 (as chapter president)</li>
+      <li>OnePetro Grant — secured institutional access to 1.3 million SPE technical papers</li>
+      <li>Best Project Award — 10 TPD Shea Butter Production Plant; selected for ICERFE presentation</li>
+      <li>Best Project Award, Best Presentation Award and ₦50,000 prize — Potato Peel Activated Carbon Plant</li>
+      <li>First place — NSChE 2026 ABU Zaria Departmental Debate Competition</li>
+    </ul>
+  </div>
+
+</div><!-- /cv -->
+
+<script>
+  // Auto-trigger print when the page loads from the portfolio link
+  // Only do so if opened as a new window (opener exists) or if ?print=1 is in the URL
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('print') === '1' || window.opener) {
+    window.addEventListener('load', () => {
+      setTimeout(() => window.print(), 400);
+    });
+  }
+</script>
+</body>
+</html>
